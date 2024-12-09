@@ -1,5 +1,6 @@
-const throttle = require('p-throttle')
-const {show} = require('./show')
+import {show} from './show-utils/show.js'
+import throttle from 'throttle'
+// import throttle from 'https://esm.sh/p-throttle'
 
 const throttledShow = throttle({interval: 500, limit: 1})(show)
 

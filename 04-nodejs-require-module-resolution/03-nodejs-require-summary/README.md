@@ -1,12 +1,19 @@
-# Node.js `import` Module Resolution Summary
+# Node.js `require` Module Resolution Summary
 
 ## Module resolution for relative specifiers
 
-- For relative specifiers, module resolution is exactly like browser module resolution:
+- For relative specifiers, module resolution is a superset of the resolution for `import`
 
-- Absolutize the URL of the module specifier relative to the URL of the importing module.
+- Absolutize the path of the module specifier relative to the path of the importing module.
 
-- This means that the file extension of the file _must_ be specified.
+- If the file extension is specified, great.
+
+- If not, try to find the file with the extensions: `.js`, `.cjs`, `.mjs`, `.json`, `.node`.
+
+- If found, great.
+
+- If not, look for a folder with that name, and look for an `index.js` or `package.json`.
+  In essence treat that folder like a package folder, from the algorithm for bare specifiers
 
 ## Module resolution for bare specifiers
 
@@ -23,7 +30,7 @@
   - In both cases, the `exports` points to the file that is the entry point.
 
 - When `main` is used, the user of the package can "deep link" into the package by specifying the path to the file
-  they want to import (e.g. `import { goodbye } from 'hello/goodbye.js')`).
+  they want to import (e.g. `const { goodbye } = require('hello/goodbye.js')`).
 
 - But `exports` blocks that ability, and adds the ability to have multiple entry points:
 

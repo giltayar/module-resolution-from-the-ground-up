@@ -6,7 +6,7 @@
 
   - `.mjs` for ESM
 
-  - `.js` looks for neareset `package.json` and uses the `type` field to determine file type
+  - `.js` looks for nearest `package.json` and uses the `type` field to determine file type
 
 - So the target file type is unambiguous!
 
@@ -32,8 +32,8 @@
 }
 ```
 
-- This tells Node.js that no matter whether we're `import`-ing or
-  using `require`, the entry point should be `./src/index.js`.
+- This tells Node.js that no matter whether we're `import`-ing or using `require`, the entry point should be
+  `./src/index.js`.
 
 - But it can also be "conditional":
 
@@ -49,10 +49,9 @@
 }
 ```
 
-- Now we're telling Node.js that if the user is using `import`,
-  they should get `./src/index.js`,
-  but if they're using `require`, they should get `./src/index.cjs`.
+- Now we're telling Node.js that if the user is using `import`, they should get `./src/index.js`, but if
+  they're using `require`, they should get `./src/index.cjs`.
 
-- We can see this happening in [`index.js`](./index.js), that `import`-s and `require` the same package
-  and yet gets different results.
+- We can see this happening in [`index.js`](./index.js), that `import`-s and `require` the same package and
+  yet gets different results.
 

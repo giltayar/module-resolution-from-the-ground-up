@@ -10,7 +10,7 @@
 
   - By looking inside a folder with that name
 
-- For bare specifiers, there is actually no difference from `import` !
+- For bare specifiers, there is actually no difference from `import`!
 
   - Looks up the folders for a `node_modules` folder with the same name as the bare specifier
 

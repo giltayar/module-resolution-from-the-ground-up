@@ -1,10 +1,13 @@
 # 01 How does module resolution work in the browser for relative paths?
 
-- Module resolution is how we interpret the "specifier" in `import {something} from '*specifier*'` . This section deals with how this interpretation works in the browser.
+- Module resolution is how we interpret the "specifier" in `import {something} from '*specifier*'`. This
+  section deals with how this interpretation works in the browser.
 
-- While importing can also be done with `const {something} = require('*specifier*')` , the browser doesn't support this. It only supports ESM `import`.
+- While importing can also be done with `const {something} = require('*specifier*')`, the browser doesn't
+  support this. It only supports ESM `import`.
 
-- We've also seen that there are other module resolvers out there (e.g. Node.js, TypeScript), the easiest one to explain is the browser one!
+- We've also seen that there are other module resolvers out there (e.g. Node.js, TypeScript), the easiest one
+  to explain is the browser one!
 
 - Example with relative path
 

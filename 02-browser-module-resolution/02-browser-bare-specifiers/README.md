@@ -1,6 +1,7 @@
 ## 02 How do "bare" specifiers work in the browser?
 
-- Browsers interpret the specifier in `import {something} from './some/relative/path.js` easily - they just resolve the URL from the current module's URL, and then HTTP GET-s it.
+- Browsers interpret the specifier in `import {something} from './some/relative/path.js` easily - they just
+  resolve the URL from the current module's URL, and then HTTP GET-s it.
 
 - And we've seen how the browser crashes when receiving a bare specifier like `p-thrrotle`.
 

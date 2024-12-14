@@ -1,6 +1,7 @@
 ## 03 How does Node.js use `package.json`'s `main`?
 
-- So we've seen how Node.js looks for bare specifiers - part of the algorithm goes looking in the `node_modules` folder with the same name as the package, and looking for the `package.json` in there.
+- So we've seen how Node.js looks for bare specifiers - part of the algorithm goes looking in the `node_modules`
+  folder with the same name as the package, and looking for the `package.json` in there.
 
 - Node.js will look in the `main` field and the `exports` field. `exports` wins if it exists.
 
@@ -10,9 +11,11 @@
 
 - But let's look at `main`
 
-- `main` is where Node.js looks for the entry point if you just write the name of the package as a bare specifier (e.g. `hello`).
+- `main` is where Node.js looks for the entry point if you just write the name of the package as a bare specifier
+  (e.g. `hello`).
 
-- But you can also "deep link" into the package, and write `hello/other-words/world.js`, and it will still work by ignoring `main`!
+- But you can also "deep link" into the package, and write `hello/other-words/world.js`, and it will still work by
+  ignoring `main`!
 
 - Nothing stops us from accessing any file we want in the package.
 

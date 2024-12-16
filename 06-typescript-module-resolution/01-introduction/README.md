@@ -1,6 +1,4 @@
-# TypeScript Module Resolution
-
-## 01 Introduction
+# 01 Introduction
 
 - TypeScript is a superset of TypeScript
 
@@ -18,9 +16,9 @@
 - Let's look at `index.ts`:
 
   ```typescript
-  import { hello } from './hello.js';
+  import {hello} from './hello.js'
 
-  console.log(hello);
+  console.log(hello)
   ```
 
 - TypeScript does three things in the `import` statement

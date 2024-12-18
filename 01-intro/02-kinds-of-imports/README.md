@@ -18,8 +18,10 @@
 
 - It's still most of NPM
 
+---
+
 - (and as we'll see, we also have "faux ESM", but we'll talk about that later)
 
-- So (current filepath/url, specifier, kind of import) => filepath/url
+- So `(current filepath/url, specifier, kind of import) => filepath/url`
 
 - This is what defines a module resolver. This is the algorithm

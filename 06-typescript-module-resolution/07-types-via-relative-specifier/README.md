@@ -1,4 +1,4 @@
-# 06 Finding the types in relative specifiers
+# Finding the types in relative specifiers
 
 TBD
 

@@ -1,4 +1,4 @@
-## 05 The `module` option `tsconfig.json`
+## The `module` option `tsconfig.json`
 
 TBD
 

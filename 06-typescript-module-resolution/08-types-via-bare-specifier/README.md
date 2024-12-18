@@ -1,4 +1,4 @@
-# 07 Finding the types in bare specifiers
+# Finding the types in bare specifiers
 
 TBD
 

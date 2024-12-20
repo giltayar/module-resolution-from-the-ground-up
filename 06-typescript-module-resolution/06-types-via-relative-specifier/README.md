@@ -1,9 +1,9 @@
 # Finding the types in relative specifiers
 
-TBD
+- When TypeScript figures out the corresponding `.ts` file of a relative specifier, it will
+  figure out the types from that file
 
-- How TypeScript does not actually need the `.ts` file to be present to read the types
+- But you don't need the `.ts` file when transpiling - you can just have the `.d.ts`
 
-- Only the `.d.ts` file is needed.
-
-- Show how we can have a both, and the `.d.ts` can "cheat" with wrong types
+- Obviously, this code won't run after transpiling, because when running it will not find the `.js` file,
+  but it _will_ transpile

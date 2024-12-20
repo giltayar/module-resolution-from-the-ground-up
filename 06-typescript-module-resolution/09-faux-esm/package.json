@@ -1,0 +1,10 @@
+{
+  "private": "true",
+  "dependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
+}

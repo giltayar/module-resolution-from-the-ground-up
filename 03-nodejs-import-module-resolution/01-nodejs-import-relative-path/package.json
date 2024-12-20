@@ -1,10 +1,4 @@
 {
   "private": "true",
-  "type": "module",
-  "devDependencies": {
-    "serve": "^14.2.4"
-  },
-  "scripts": {
-    "start": "serve ."
-  }
+  "type": "module"
 }

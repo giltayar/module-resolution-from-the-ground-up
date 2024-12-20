@@ -1,6 +1,5 @@
-import {show} from './show-utils/show.js'
+import {show} from '#show'
 import throttle from 'p-throttle'
-// import throttle from 'https://esm.sh/p-throttle'
 
 const throttledShow = throttle({interval: 500, limit: 1})(show)
 

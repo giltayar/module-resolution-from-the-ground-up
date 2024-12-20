@@ -1,0 +1,10 @@
+{
+  "private": "true",
+  "type": "module",
+  "imports": {
+    "#show": "./show-utils/show.js"
+  },
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  }
+}

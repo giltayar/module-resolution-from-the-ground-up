@@ -1,0 +1,10 @@
+{
+  "private": "true",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types ./index.ts"
+  }
+}

@@ -1,7 +1,7 @@
 # 02 The `moduleResolution: nodenext` Option in `tsconfig.json`
 
 - TypeScript has a `moduleResolution` option in `tsconfig.json`, that enables it to use different module resolution
-  algorithms. Most are a relic of a bygone error, but two are really useful:
+  algorithms. Most are a relic of a bygone error, but two are really useful. Let's start with...
 
 - `moduleResolution: nodenext` means that module resolution follows the Node.js resolution algorithm for CommonJS
   (if it's a CommonJS file) or ESM (if it's an ESM file).

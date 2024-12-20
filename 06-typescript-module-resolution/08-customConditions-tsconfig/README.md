@@ -1,9 +1,8 @@
 # Custom Conditions
 
+- When resolving a package entry point, TypeScript, just like Node.js, will use the `exports` field in `package.json`.
 
-TBD
+- When there are conditional exports, it will use the `import` condition to find them when
+  the code uses `import` and the `require` condition when the code uses `require`.
 
-- `customConditions` allows us to define conditions
-
-- Can be used, as an example, in monorepos where we want to work immediately with the source code
-
+- But what if we want a custom condition? We can do that using the TSConfig `customCondition: true`.

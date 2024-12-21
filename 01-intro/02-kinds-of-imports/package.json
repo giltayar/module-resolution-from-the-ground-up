@@ -1,7 +1,10 @@
 {
-  "private": "true",
-  "type": "module",
   "dependencies": {
     "p-throttle": "^4.1.1"
+  },
+  "scripts": {
+    "start": "npm run start:esm && npm run start:cjs",
+    "start:cjs": "node ./src-cjs/index.js",
+    "start:esm": "node ./src-esm/index.js"
   }
 }

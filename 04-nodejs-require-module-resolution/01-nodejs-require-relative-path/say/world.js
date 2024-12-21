@@ -1,1 +1,1 @@
-exports.world = 'world'
+exports.world = 'World'

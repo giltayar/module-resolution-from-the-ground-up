@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "start:import": "node using-import-in-commonjs.cjs",
+    "start:require": "node using-require-in-esm.mjs"
+  }
+}

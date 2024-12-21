@@ -1,13 +1,9 @@
 {
-  "private": "true",
   "type": "module",
-  "devDependencies": {
-    "serve": "^14.2.4"
-  },
-  "scripts": {
-    "start": "serve ."
-  },
   "dependencies": {
     "p-throttle": "^7.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }

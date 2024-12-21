@@ -1,6 +1,5 @@
 import {show} from './show-utils/show.js'
 import throttle from 'p-throttle'
-import 'fooz'
 
 const throttledShow = throttle({interval: 500, limit: 1})(show)
 

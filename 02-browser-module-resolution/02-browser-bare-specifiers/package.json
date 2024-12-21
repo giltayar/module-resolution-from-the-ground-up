@@ -1,5 +1,4 @@
 {
-  "private": "true",
   "type": "module",
   "devDependencies": {
     "serve": "^14.2.4"

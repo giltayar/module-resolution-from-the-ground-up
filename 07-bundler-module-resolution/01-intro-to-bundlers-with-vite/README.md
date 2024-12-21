@@ -43,12 +43,12 @@ for (const _ of Array.from({length: 5})) {
 - The bundler concatenates all the modules together
   and glues them with some kind of glue code that replaces the imports/exports
 
-- Let's see it with `esbuild`
+- Let's see it with Vite, a very popular bundler these days
 
 - Why bundle?
 
   - If we didn't, each app would have had hundreds of requests
 
-  - Most packages in NPM are not ESM-browser compliant. Some are not even ESM
+  - Most packages in NPM are not ESM (they're CommonJS). And those that are, some are "Faux ESM"
 
   - It enables weird thinks like "importing" CSS and "importing" images

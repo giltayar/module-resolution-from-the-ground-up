@@ -4,16 +4,13 @@
 
 - The `bundler` module resolution algorithm is the Node.js CommonJS module resolution.
 
-TBD
+- The `bundler` module resolution is an interesting one - it makes you write "Faux ESM".
+  Why call it "False ESM"? Because the ESM you write can't run natively in the browser or in Node.js!
 
-... and explain how it doesn't run in Node.js, but rather in the bundler
-... the bundler module resolution algorithm is actually the CommonJS resolution algorithm! So extensionless
-... imports are supported. The only twist is that the condition is still `import` and not `require`
+- It needs to be transpiled, even if it is pure JavaScript
 
-- This is Faux ESM, as it doesn't (and can't) run in the browser (or Node.js)
+- Historically, the `bundler` module resolution came before TypeScript. It was created before Node.js had ESM
+  and before browsers had ESM. All we had was CommonJS, so that when transpilers like Babel transpiled the `import`,
+  they transpiled it to `require`. Thus it made sense to use the CommonJS module resolution algorithm.
 
-- Explain that the bundler module resolution came about because Babel and TypeScript created it before
-  Node.js came and defined the ESM module resolution algorithm to be browser compatible
-
-- Explain how it is a practical solution, but creates JavaScript that is browser incompatible
-
+- Today it doesn't make any sense, but history is hard to shake off.

@@ -55,3 +55,5 @@
 - We can see this happening in [`index.js`](./index.js), that `import`-s and `require` the same package and
   yet gets different results.
 
+- Custom conditions are evaluated from the first to the last - the first one who's condition is satisfied wins.
+

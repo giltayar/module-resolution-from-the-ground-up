@@ -1,7 +1,6 @@
 {
-  "private": "true",
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^5.7.2"
   },
   "scripts": {

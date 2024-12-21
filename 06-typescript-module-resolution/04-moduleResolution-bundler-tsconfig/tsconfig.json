@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
     "moduleResolution": "bundler",
+    "module": "ESNext",
     "outDir": "./dist",
+    "strict": true
   }
 }

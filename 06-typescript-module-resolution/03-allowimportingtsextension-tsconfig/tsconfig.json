@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
     "moduleResolution": "nodenext",
+    "module": "NodeNext",
     "outDir": "./dist",
+    "strict": true,
     "allowImportingTsExtensions": true,
     // "noEmit": true,
     "rewriteRelativeImportExtensions": true

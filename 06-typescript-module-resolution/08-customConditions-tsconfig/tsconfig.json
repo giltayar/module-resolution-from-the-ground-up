@@ -3,6 +3,7 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "outDir": "./dist",
+    "strict": true,
     "customConditions": ["crazy"]
   }
 }

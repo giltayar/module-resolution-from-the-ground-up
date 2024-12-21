@@ -4,7 +4,7 @@
   },
   "scripts": {
     "start": "npm run start:esm && npm run start:cjs",
-    "start:cjs": "node ./src-cjs/index.js",
-    "start:esm": "node ./src-esm/index.js"
+    "start:cjs": "node ./cjs/index.js",
+    "start:esm": "node ./esm/index.js"
   }
 }

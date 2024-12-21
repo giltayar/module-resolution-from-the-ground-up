@@ -1,16 +1,12 @@
 ## 02 What kinds of "import"-s are there?
 
-- Module resolution is how the JS runtime resolves the specifier in `import {something} from '*specifier*'` .
+- Module resolution is how the JS runtime resolves the specifier in `import {something} from '*specifier*'`.
 
 - But is this the only way to import a module? No, there are two ways.
 
-- ESM - the main one
+- ESM - the main one: `import {something} from '*specifier*'`
 
-  - Show
-
-- CJS - the legacy one
-
-  - Show
+- CJS - the legacy one: `const {something} = require('*specifier*')`
 
 - ESM was defined in 2015, but implementations really started being there only in 2020
 
@@ -19,8 +15,6 @@
 - It's still most of NPM
 
 ---
-
-- (and as we'll see, we also have "faux ESM", but we'll talk about that later)
 
 - So `(current filepath/url, specifier, kind of import) => filepath/url`
 

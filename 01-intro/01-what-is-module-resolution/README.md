@@ -1,15 +1,51 @@
 # 01 What is module resolution?
 
-- Let's talk about module resolution in JavaScript
+```js
+// index.js
+import {show} from './show.js'
+import throttle from 'p-throttle'
 
-- Show an import and then show the specifier
+const throttledShow = throttle({interval: 500, limit: 1})(show)
 
-- Why "module"? Fancy name for "JS file"
+for (const _ of Array.from({length: 5})) {
+  throttledShow('hello world')
+}
 
-- The algorithm that resolves a specifier to a path is called a "module resolver"
+// show.js
+export function show(message) {
+  console.log(message)
+}
+```
 
-- The resolution depends on the current file and the specifier
+To run this Node.js code, we...
 
-- And resolves to a file path, or in the browser case, a URL
+```sh
+$ node index.js
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+```
 
-- So... (current filepath/url, specifier) => filepath/url
+When running the code in `index.js`, Node.js finds those import statements:
+
+```js
+import {show} from './show.js'
+import throttle from 'p-throttle'
+```
+
+And in those import statements, it finds the part in quotes: `./show.js` and `p-throttle` -
+those are _module specifiers_.
+
+Those impors need to find the module "pointed to" by `./show.js` and `p-throttle`.
+
+In the case of `./show.js`, it is the file `{projectRot}/show.js`.
+
+And in the case of `p-throttle`, it's `node_modules/p-throttle/index.js`.
+
+The process by which Node.js maps the strings to modules on the disk is called _module resolution_.
+
+In this course, we will learn how Node.js and other tools do module resolution.
+
+Note - in JavaScript, "module" is just a fancy name for "file". 😁

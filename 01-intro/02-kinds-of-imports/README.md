@@ -1,21 +1,41 @@
 ## 02 What kinds of "import"-s are there?
 
-- Module resolution is how the JS runtime resolves the specifier in `import {something} from '*specifier*'`.
+Reminder: "module resolution" is how the JS runtime resolves the specifier in `import {something} from '*specifier*'`.
 
-- But is this the only way to import a module? No, there are two ways.
+There are two ways to import a module in JavaScript
 
-- ESM - the main one: `import {something} from '*specifier*'`
+## Importing ESM
 
-- CJS - the legacy one: `const {something} = require('*specifier*')`
+```js
+// esm/index.js
+import {show} from './show.js'
+...
 
-- ESM was defined in 2015, but implementations really started being there only in 2020
+// esm/show.js
+export function show(message) {
+  console.log(message)
+}
+```
 
-- So until then, Node.js used CJS
+This is the standard and main way we import modules in JavaScript. Defined in 2015,
+it was only broadly implemented in the 2020-s.
 
-- It's still most of NPM
+## Importing CommonJS
 
----
+```js
+// cjs/index.js
+const {show} = require('./show')
+...
 
-- So `(current filepath/url, specifier, kind of import) => filepath/url`
+// cjs/show.js
+module.exports.show = function show(message) {
+  console.log(message)
+}
+```
 
-- This is what defines a module resolver. This is the algorithm
+Node.js needed a module system before there was ESM, and so implemented CommonJS, a "userland" module system that
+uses `require` to import a module and `module.exports` to export stuff from a module.
+
+"Userland" means that the module system is fully implemented in JavaScript, by Node.js, without any help
+from the JavaScript runtime. Compare that with "Native" ESM
+that is implemented with the help of the JavaScript runtime.

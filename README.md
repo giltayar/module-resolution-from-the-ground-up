@@ -1,4 +1,9 @@
 # module-resolution-from-the-ground-up
 
-Code and presentation for the "Module Resolution: From the Ground Up" talk
+A mini-course that explains how "module resolution" works in Node.js, browsers, TypeScript,
+and bundlers like Vite and Webpack.
 
+
+To follow this course
+
+TBD

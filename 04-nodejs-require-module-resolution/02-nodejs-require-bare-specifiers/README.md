@@ -8,10 +8,10 @@
 
   - By guessing the extension from a list of known extensions, e.g. `.js`, `.cjs`, ...
 
-  - By looking inside a folder with that name
+  - By looking inside a directory with that name
 
 - For bare specifiers, there is actually no difference from `import`!
 
-  - Looks up the folders for a `node_modules` folder with the same name as the bare specifier
+  - Looks up the directorys for a `node_modules` directory with the same name as the bare specifier
 
   - In it, there's either an `.index.js` file or a `package.json` with `main` or `exports` fields

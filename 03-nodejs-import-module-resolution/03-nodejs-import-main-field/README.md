@@ -1,7 +1,7 @@
 ## 03 How does Node.js use `package.json`'s `main`?
 
 - So we've seen how Node.js looks for bare specifiers - part of the algorithm goes looking in the `node_modules`
-  folder with the same name as the package, and looking for the `package.json` in there.
+  directory with the same name as the package, and looking for the `package.json` in there.
 
 - Node.js will look in the `main` field and the `exports` field. `exports` wins if it exists.
 

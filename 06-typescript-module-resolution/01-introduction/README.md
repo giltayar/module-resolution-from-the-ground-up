@@ -29,7 +29,7 @@
 
   1. Determines the type of `hello` to enable type checking
 
-- In our folder:
+- In our directory:
 
   1. TypeScript will resolve `./hello.js` to `./hello.ts`
      (yes, this is not a typo!)

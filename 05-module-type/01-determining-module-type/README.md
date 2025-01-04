@@ -3,7 +3,7 @@
 - Module resolution works differently if we use `import` and if we use `require`. For relative paths, `import`
   module resolution is simple and like the browser, and for bare specifiers and for relative paths in the
   `require` case, everything is more complicated and the algorithm involves guessing extensions and going up
-  folders looking for the right folder in `node_modules`, and using `package.json` fields `main` and `export`.
+  directorys looking for the right directory in `node_modules`, and using `package.json` fields `main` and `export`.
 
 - But let's think about _where_ `import` and `require` are used. In most cases, `import` is used in ESM files,
   and `require` is used in CommonJS. I actually _can't_ use `import` in CommonJS regularly, and _can't use
@@ -30,7 +30,7 @@
 
 - If the extension is `.mjs`, then it's ESM
 
-- If it's `.js`, then it has to look at the "nearest" `package.json` (by going up the folders and looking for a
+- If it's `.js`, then it has to look at the "nearest" `package.json` (by going up the directorys and looking for a
   `package.json`)
 
   - If it has `type: module` then the file is ESM

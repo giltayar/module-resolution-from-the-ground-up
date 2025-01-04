@@ -12,8 +12,8 @@
 
 - If found, great.
 
-- If not, look for a folder with that name, and look for an `index.js` or `package.json`.
-  In essence treat that folder like a package folder, from the algorithm for bare specifiers
+- If not, look for a directory with that name, and look for an `index.js` or `package.json`.
+  In essence treat that directory like a package directory, from the algorithm for bare specifiers
 
 ## Module resolution for bare specifiers
 

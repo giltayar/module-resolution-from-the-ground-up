@@ -18,7 +18,7 @@
 - So if TypeScript is not "allowed" to touch the specifier,
   then the import in `index.js` MUST work, and thus MUST be `./hello.js`.
 
-- But there is _no_ `hello.js` file in the folder! Only `hello.ts`.
+- But there is _no_ `hello.js` file in the directory! Only `hello.ts`.
   So how does this work?
 
 - TypeScript _reverse engineers_ (or inverse maps) the `hello.js` to `hello.ts`

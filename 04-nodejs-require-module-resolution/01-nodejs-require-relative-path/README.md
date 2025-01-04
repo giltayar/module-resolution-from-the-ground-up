@@ -35,8 +35,8 @@ const { require } = require("./say-hello");
 - `.cjs` and `.mjs` are like `.js`, and we'll talk about them in a bit. `.json` you all know, and `.node` is a
   rarely used "binary" file
 
-- But it gets worse! It will also look for a folder named `say-hello` that has an `index.js` in it.
+- But it gets worse! It will also look for a directory named `say-hello` that has an `index.js` in it.
 
 - And... worse! Instead of `index.js` you can have a `package.json` with a `main/exports` field too.
 
-- This is actually how Node.js works with folders in `node_modules` for `import`! Same algorithm...
+- This is actually how Node.js works with directorys in `node_modules` for `import`! Same algorithm...

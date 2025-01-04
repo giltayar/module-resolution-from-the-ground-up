@@ -7,12 +7,12 @@
   - Bare specifiers in browsers was just a lookup in an importmap
 
 - But this is now more complicated. In Node.js, a bare specifier usually points to a package that was installed by
-  `npm install` in the `node_modules` folder, so it makes sense that it has in the algorithm the `node_modules`
-  folder and the `package.json`.
+  `npm install` in the `node_modules` directory, so it makes sense that it has in the algorithm the `node_modules`
+  directory and the `package.json`.
 
 - Let's take it slowly.
 
-- The first thing Node.js does is look in the current directory of the current file for a `node_modules` folder.
+- The first thing Node.js does is look in the current directory of the current file for a `node_modules` directory.
 
   - It's not there? Look one directory above (all the way to the root of the filesystem)
 

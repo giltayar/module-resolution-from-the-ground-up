@@ -1,6 +1,6 @@
 # Node.js "import" field
 
-- When you import a package, Node.js finds a package folder in the `node_modules`, it looks at its `package.json` to find
+- When you import a package, Node.js finds a package directory in the `node_modules`, it looks at its `package.json` to find
   the `exports` field that defines the entry points to the package.
 
 - So exports is used from _without_ the package, to figure out what modules to import inside it.

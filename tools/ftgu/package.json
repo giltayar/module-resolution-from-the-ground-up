@@ -1,7 +1,7 @@
 {
-  "name": "@giltayar/fgtu",
+  "name": "@giltayar/ftgu",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "exports": {
     "./prepare-browser-test": {
@@ -13,11 +13,10 @@
     "build": "tsc",
     "test": "playwright test test/test.spec.js"
   },
-  "dependencies": {
-    "@types/node": "^22.10.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
     "typescript": "^5.7.2"
   }
 }

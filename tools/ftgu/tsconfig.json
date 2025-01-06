@@ -15,6 +15,7 @@
     "allowImportingTsExtensions": true,
     "composite": true,
     "sourceMap": true,
+    "declarationMap": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "dist"

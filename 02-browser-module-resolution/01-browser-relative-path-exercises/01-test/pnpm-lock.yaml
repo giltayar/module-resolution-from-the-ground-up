@@ -7,7 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
+      '@giltayar/ftgu':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@playwright/test':
         specifier: ^1.49.1
         version: 1.49.1
@@ -16,6 +19,9 @@ importers:
         version: 22.10.5
 
 packages:
+
+  '@giltayar/ftgu@1.2.0':
+    resolution: {integrity: sha512-IcN8cvAv67FS2utks4yHcZv6yPybBOwdLYucKnTgXJiJDOIq2Rvi8j1bETNVU92u4rtGZLfhBQgKM77V2tw7hg==}
 
   '@playwright/test@1.49.1':
     resolution: {integrity: sha512-Ky+BVzPz8pL6PQxHqNRW1k3mIyv933LML7HktS8uik0bUXNCdPhoS/kLihiO1tMf/egaJb4IutXd7UywvXEW+g==}
@@ -44,6 +50,8 @@ packages:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
 snapshots:
+
+  '@giltayar/ftgu@1.2.0': {}
 
   '@playwright/test@1.49.1':
     dependencies:

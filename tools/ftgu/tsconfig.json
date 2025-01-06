@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "preserve",
-    "noEmit": true,
     "lib": ["ES2023"],
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,6 +12,12 @@
     "verbatimModuleSyntax": true,
     "strict": true,
     "noImplicitOverride": true,
-    "allowImportingTsExtensions": true
-  }
+    "allowImportingTsExtensions": true,
+    "composite": true,
+    "sourceMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
+  },
+  "include": ["src"]
 }

@@ -1,13 +1,21 @@
 {
   "name": "@giltayar/fgtu",
   "type": "module",
+  "exports": {
+    "./prepare-browser-test": {
+      "types": "./dist/src/prepare-browser-test.d.ts",
+      "import": "./src/prepare-browser-test.js"
+    }
+  },
   "scripts": {
+    "build": "tsc",
     "test": "playwright test test/test.spec.js"
   },
   "dependencies": {
     "@types/node": "^22.10.5"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.1"
+    "@playwright/test": "^1.49.1",
+    "typescript": "^5.7.2"
   }
 }

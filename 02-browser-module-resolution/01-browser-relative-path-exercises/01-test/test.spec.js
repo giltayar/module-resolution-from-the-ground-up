@@ -11,7 +11,7 @@ test.beforeAll(async () => {
   await expect(() => fetch('http://localhost:3000')).toPass()
 })
 
-test('01', async ({page}) => {
+test('test', async ({page}) => {
   await page.goto('http://localhost:3000/')
 
   await expect(page.locator('#root')).toHaveText(/hello, world/)

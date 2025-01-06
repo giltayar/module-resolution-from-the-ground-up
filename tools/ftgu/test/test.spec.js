@@ -18,3 +18,9 @@ test('test', async ({page}) => {
 
   await expect(page.locator('#root')).toHaveText('Hello')
 })
+
+test('prepare test fails on non-existing directory', () => {
+  expect(() => prepareTest('../non-existing-directory', test, expect)).toThrowError(
+    /exercise directory .+ does not exist/
+  )
+})

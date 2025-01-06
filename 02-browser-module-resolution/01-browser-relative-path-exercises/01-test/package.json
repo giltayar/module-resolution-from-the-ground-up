@@ -1,11 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "test": "playwright test 01.spec.js"
+    "test": "playwright test test.spec.js"
   },
   "dependencies": {
     "@playwright/test": "^1.49.1",
-    "@types/node": "^22.10.5",
-    "execa": "^9.5.2"
+    "@types/node": "^22.10.5"
   }
 }

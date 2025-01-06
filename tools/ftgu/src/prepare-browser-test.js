@@ -7,9 +7,8 @@ import {exec} from 'node:child_process'
 export function exerciseDirectory(importMetaUrl) {
   const solution = process.env.SOLUTION
   const exerciseNumber = new URL('.', importMetaUrl).href.split('/').at(-2)?.replace('-test', '')
-  const exerciseDirectory = solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
 
-  return {exerciseDirectory}
+  return solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
 }
 
 /**

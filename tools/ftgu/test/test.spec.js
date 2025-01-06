@@ -7,12 +7,10 @@ test('exerciseDirectory', () => {
   const importMetaUrl = new URL('./07-test/dummy-test.js', import.meta.url).href
 
   process.env.SOLUTION = 'solution'
-  let result = exerciseDirectory(importMetaUrl)
-  expect(result.exerciseDirectory).toBe('../07-solution')
+  expect(exerciseDirectory(importMetaUrl)).toBe('../07-solution')
 
   delete process.env.SOLUTION
-  result = exerciseDirectory(importMetaUrl)
-  expect(result.exerciseDirectory).toBe('../07')
+  expect(exerciseDirectory(importMetaUrl)).toBe('../07')
 })
 
 test('test', async ({page}) => {

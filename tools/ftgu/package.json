@@ -1,0 +1,13 @@
+{
+  "name": "@giltayar/fgtu",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test test/test.spec.js"
+  },
+  "dependencies": {
+    "@types/node": "^22.10.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}

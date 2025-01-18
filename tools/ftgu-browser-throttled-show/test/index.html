@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "throttled-show": "../dist/src/throttled-show.js",
+          "p-throttle": "./node_modules/p-throttle/index.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import {throttledShow} from 'throttled-show'
+
+      window.throttledShow = throttledShow
+    </script>
+    <div id="root"></div>
+  </body>
+</html>

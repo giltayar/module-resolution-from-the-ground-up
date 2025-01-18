@@ -1,0 +1,26 @@
+{
+  "name": "@giltayar/ftgu-browser-throttled-show",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/throttled-show.d.ts",
+      "import": "./src/throttled-show.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "playwright test test/test.spec.ts",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "serve": "^14.2.4",
+    "typescript": "^5.7.2"
+  }
+}

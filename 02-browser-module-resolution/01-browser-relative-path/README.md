@@ -6,6 +6,8 @@ This section deals with how this interpretation works in the browser.
 While importing can also be done with `const {something} = require('*specifier*')`,
 the browser doesn't support this. It only supports ESM `import`.
 
+---
+
 The browser supports ESM only if the `<script>` tag comes with `type="module"`:
 
 ```html
@@ -28,6 +30,8 @@ export function show(message) {
 }
 ```
 
+---
+
 Showing the page (you can use `pnpm start` for this), will generate the following HTTP requests, via
 the server log we see when we use `pnpm start`:
 
@@ -43,13 +47,15 @@ the server log we see when we use `pnpm start`:
 The JS files are being requested by the browser via HTTP, and are not accessed directly from the disk.
 This makes sense - all resources the browser uses are requested via HTTP!
 
-the `show.js` is being requested by the browser via the URL `http://localhost:3000/show-utils/show.js`.
+The `show.js` is being requested by the browser via the URL `http://localhost:3000/show-utils/show.js`.
 The `http://localhost:3000` is not shown in the server log.
 
 The module specifier `'./show-utils/show.js'` is called a _relative_ specifier, because the final URL is relative
 to the current module being loaded.
 
 Relative specifiers start with either a `.` or `/` (we'll explore specifiers that start with `/` in the exercise).
+
+---
 
 The final URL is calculated by taking the relative specifier - in our case `./show-utils/show.js` - and
 absolutizing it with the current module URL - in our case `http://localhost:3000/index.js`.

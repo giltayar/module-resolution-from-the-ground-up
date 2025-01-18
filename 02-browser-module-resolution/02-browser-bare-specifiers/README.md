@@ -1,4 +1,4 @@
-## 02 How do "bare" specifiers work in the browser?
+# 02 How do "bare" specifiers work in the browser?
 
 Reminder: module resolution is how we interpret the "specifier" in `import {something} from '*specifier*'`.
 This section deals with how this interpretation works in the browser.
@@ -7,6 +7,8 @@ We saw that browsers support `import` statements, if the `<script src>` tag also
 
 We saw that browsers interpret the specifier in `import {something} from './some/relative/path.js` by
 absolutizing the URL from the current module's URL, and then HTTP GET-ing it.
+
+---
 
 ## Module specifiers as HTTP URL-s
 
@@ -23,7 +25,9 @@ for (const _ of Array.from({length: 5})) {
 }
 ```
 
-This works! How?
+---
+
+## This works! How?
 
 If we browse to <https://esm.sh/p-throttle>, we'll see that it redirects to <https://esm.sh/p-throttle@7.0.0>
 (or whatever latest version there is at this time), and shows us JavaScript akin to this:
@@ -42,6 +46,8 @@ And this is exactly what the browser does.
 The site "esm.sh" is a wonderful site that serves all npm packages in the npm registry so that they
 can be used in the browser. It even transpiles the CommonJS to ESM so that even packages that are CommonJS
 and should not work in the browser, do.
+
+---
 
 ## Bare specifiers
 
@@ -66,6 +72,8 @@ and we get the error
 Spoiler: Node.js looks in `node_modules` directory for packages. Why don't the browsers? Well, they don't. Just
 like with extensions in relative specifiers, browsers don't try to "guess" where the package is. Either they know
 the full URL or they dont.
+
+---
 
 But we can give browsers a hint using **import maps**.
 

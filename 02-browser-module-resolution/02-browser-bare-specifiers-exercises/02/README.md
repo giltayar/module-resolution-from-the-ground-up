@@ -1,4 +1,4 @@
-# Exercise #1
+# Exercise #2
 
 The `index.html` is missing the source map mappings to make it work and show "hello, world". Fix it!
 
@@ -10,9 +10,14 @@ The `index.html` is missing the source map mappings to make it work and show "he
 
 1. Add the missing mapping to the import map so that the web page shows "hello, world" three times and stops.
 
+   - Don't use `esm.sh`. Instead, use the files in `node_modules`
+
+   - Note that this time, you'll need _two_ imports in the map, because the first package also uses another package,
+     `p-throttle`. Which is also in `node_modules`.
+
 1. Want to be sure it works? Run `pnpm test` to verify that the solution works.
 
 Hints:
 
-- Look in `index.js` to see what package the JavaScript imports, and use the import map to map that
-  package to the proper `esm.sh` URL
+- Use the Dev Tools console output to figure out what packages the HTML is using, and map those to the
+  appropriate file in `node_modules`.

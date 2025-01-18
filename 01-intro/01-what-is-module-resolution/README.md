@@ -17,6 +17,8 @@ export function show(message) {
 }
 ```
 
+---
+
 To run this Node.js code, we...
 
 ```sh
@@ -38,7 +40,9 @@ import throttle from 'p-throttle'
 And in those import statements, it finds the part in quotes: `./show.js` and `p-throttle` -
 those are _module specifiers_.
 
-Those impors need to find the module "pointed to" by `./show.js` and `p-throttle`.
+---
+
+Those imports need to find the module "pointed to" by `./show.js` and `p-throttle`.
 
 In the case of `./show.js`, it is the file `{projectRot}/show.js`.
 

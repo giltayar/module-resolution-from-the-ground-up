@@ -1,8 +1,10 @@
-## 02 What kinds of "import"-s are there?
+# 02 What kinds of "import"-s are there?
 
 Reminder: "module resolution" is how the JS runtime resolves the specifier in `import {something} from '*specifier*'`.
 
 There are two ways to import a module in JavaScript
+
+---
 
 ## Importing ESM
 
@@ -19,6 +21,8 @@ export function show(message) {
 
 This is the standard and main way we import modules in JavaScript. Defined in 2015,
 it was only broadly implemented in the 2020-s.
+
+---
 
 ## Importing CommonJS
 

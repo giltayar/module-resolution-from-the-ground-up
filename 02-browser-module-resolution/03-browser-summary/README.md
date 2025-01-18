@@ -18,6 +18,8 @@
 
 - To use bare specifiers, you must specify the translation using an import map
 
+---
+
 ## Browser Module Resolution Algorithm (Simplified)
 
 ```js

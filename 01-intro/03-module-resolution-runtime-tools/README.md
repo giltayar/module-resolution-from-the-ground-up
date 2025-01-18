@@ -17,6 +17,8 @@ But there are different kinds of JS runtimes. And there are other tools that do 
 
    We already saw that Node.js supports CommonJS.
 
+---
+
 4. TypeScript
 
    When Typescript sees an import it needs to figure out what that file is, so it can process it too.

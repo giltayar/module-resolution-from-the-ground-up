@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev export slides-*.md --with-toc --format pptx && mkdir -p dist && mv slides-*.pptx dist",
+    "build": "slidev export slides-*.md --with-toc --format pptx && mkdir -p dist && mv slides-*.pptx dist && rm -rf slides-*-export",
     "dev": "slidev"
   },
   "dependencies": {

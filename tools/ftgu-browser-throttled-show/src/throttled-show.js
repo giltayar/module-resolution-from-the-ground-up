@@ -1,11 +1,10 @@
 import throttle from 'p-throttle'
 
-export function throttledShow(
-  message: string,
-  options: {interval?: number; selector?: string} = {}
-) {
-  const {interval = 500, selector = '#root'} = options
-
+/**
+ * @param {string} message
+ * @param {{interval?: number, selector?: string}} options
+ */
+export function throttledShow(message, {interval = 500, selector = '#root'} = {}) {
   function show() {
     const element = document.querySelector(selector)
     if (!element) {

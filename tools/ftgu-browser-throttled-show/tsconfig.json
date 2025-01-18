@@ -12,10 +12,12 @@
     "verbatimModuleSyntax": true,
     "strict": true,
     "noImplicitOverride": true,
+    "allowImportingTsExtensions": true,
     "composite": true,
     "sourceMap": true,
     "declarationMap": true,
     "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "dist"
   },
   "include": ["src"]

@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test'
-import type {throttledShow} from '../src/throttled-show'
+import type {throttledShow} from '../src/throttled-show.js'
 
 declare global {
   interface Window {

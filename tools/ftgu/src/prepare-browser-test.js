@@ -1,12 +1,34 @@
 import {exec} from 'node:child_process'
 import fs from 'node:fs'
+import {parseArgs} from 'node:util'
 
 /**
  *
  * @param {string} importMetaUrl
  */
 export function exerciseDirectory(importMetaUrl) {
-  const solution = process.env.SOLUTION
+  const args = parseArgs({
+    options: {
+      solution: {
+        type: 'boolean',
+        short: 's',
+        default: false,
+      },
+      index: {
+        type: 'string',
+        short: 'i',
+        default: '1',
+      },
+    },
+  })
+  const solutionIndex = parseInt(args.values.index, 10)
+  const solution =
+    process.env.SOLUTION ??
+    (args.values.solution
+      ? solutionIndex === 1
+        ? 'solution'
+        : `solution-${solutionIndex}`
+      : undefined)
   const exerciseNumber = new URL('.', importMetaUrl).href.split('/').at(-2)?.replace('-test', '')
 
   return solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`

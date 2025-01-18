@@ -11,6 +11,15 @@ test('exerciseDirectory', () => {
 
   delete process.env.SOLUTION
   expect(exerciseDirectory(importMetaUrl)).toBe('../07')
+
+  process.argv = ['node', 'tools/ftgu/test/test.spec.js', '--solution']
+  expect(exerciseDirectory(importMetaUrl)).toBe('../07-solution')
+
+  process.argv = ['node', 'tools/ftgu/test/test.spec.js', '--solution', '--index=2']
+  expect(exerciseDirectory(importMetaUrl)).toBe('../07-solution-2')
+
+  process.argv = ['node', 'tools/ftgu/test/test.spec.js', '-s', '-i', '2']
+  expect(exerciseDirectory(importMetaUrl)).toBe('../07-solution-2')
 })
 
 test('test', async ({page}) => {

@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "serve .",
+    "test": "cd ../01-test && pnpm test"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  },
+  "dependencies": {
+    "@giltayar/ftgu-browser-throttled-show": "^1.0.1"
+  }
+}

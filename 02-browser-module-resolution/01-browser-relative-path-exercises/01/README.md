@@ -10,6 +10,8 @@ There are two errors in the source code (JavaScript and HTML). Fix them to make 
 
 1. Fix the errors so that the web page shows an infinite and growing list of "Hello world"-s...
 
+1. Want to be sure it works? Run `pnpm test` to verify that the solution works.
+
 Hints:
 
 - Open devtools and check the console errors

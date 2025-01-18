@@ -4,6 +4,7 @@
     "serve": "^14.2.4"
   },
   "scripts": {
-    "start": "serve ."
+    "start": "serve .",
+    "test": "cd ../02-test && pnpm test"
   }
 }

@@ -1,26 +1,67 @@
 ## 02 How does Node.js resolve `import` with bare specifiers?
 
-- Up to now, every module resolution we've seen was simple:
+Reminder: module resolution with relative specifiers is easy - just do URL absolutization based on the current
+module URL.
 
-  - Relative paths, both in Node.js and browsers was just URL absolutization
+In the browser, bare specifiers (e.g. `p-throttle`) don't work unless an importmap is supplied that maps them
+to URLs.
 
-  - Bare specifiers in browsers was just a lookup in an importmap
+How do bare specifiers work in Node.js? Bare specifiers are used for **packages** in Node.js, for example:
 
-- But this is now more complicated. In Node.js, a bare specifier usually points to a package that was installed by
-  `npm install` in the `node_modules` directory, so it makes sense that it has in the algorithm the `node_modules`
-  directory and the `package.json`.
+```js
+// some-file.js
+import throttle from 'p-throttle'
+```
 
-- Let's take it slowly.
+Here we're trying to import the package `p-throttle`.
 
-- The first thing Node.js does is look in the current directory of the current file for a `node_modules` directory.
+Node.js doesn't (yet!) support importmaps. What it does support is looking for the package directory in the
+`node_modules` directory, because that is where `npm install` installs them.
 
-  - It's not there? Look one directory above (all the way to the root of the filesystem)
+1. Node.js looks in the current directory of the current file for a `node_modules` directory.
 
-- Once found, look for a directory with the name of the package.
+   - It's not there? Look one directory above (all the way to the root of the filesystem), recursively, till it finds it.
 
-  - Not there? Continue up the directories like above
+   - If it doesn't find it, throws an error
 
-- The directory contains either an `index.js` file that is the module we're looking, or a `package.json` with
-  information on which file to use.
+1. Once found, look for a directory with the name of the package.
 
-  - Not there? I think it continues up the directories. Not sure...
+   - Not there? Continue up the directories like above
+
+   - Not found a directory with the name of the package in any `node_modules`? Throw an error.
+
+1. The directory contains either an `index.js` file that is the module we're looking, or a `package.json` with
+   information on which file to use.
+
+   - Not there? throw an error.
+
+In our example:
+
+```
+- <some-dir>
+  - node_modules/
+    - p-throttle/
+      - index.js
+  - some-file.js
+```
+
+The `import 'p-throttle'` in `<some-dir>/some-file.js`
+resolves to `<some-dir>/node_modules/p-throttle/index.js`.
+
+If `some-file` would have been in a sub-directory, e.g.
+
+```
+- <some-dir>
+  - node_modules/
+    - p-throttle/
+      - index.js
+  - subdir/
+    - some-file.js
+```
+
+The `import 'p-throttle'` in `<some-dir>/subdir/some-file.js` still
+resolves to `<some-dir>/node_modules/p-throttle/index.js` because Node.js continues up the directory tree
+till it finds `node_modules` with the package directory inside it.
+
+We've seen what it does with `index.js` in the package. In the next sections, we'll see what it does with the
+`package.json`.

@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.7"
+  },
+  "dependencies": {
+    "@giltayar/ftgu": "^1.7.0"
+  }
+}

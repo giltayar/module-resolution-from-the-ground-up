@@ -1,5 +1,6 @@
 import {$} from 'execa'
 import fs from 'node:fs'
+import killPort from 'kill-port'
 export {exerciseDirectory} from './exercise-directory.js'
 
 /**
@@ -21,7 +22,7 @@ export function prepareTest(exerciseDirectory, test, expect) {
   test.beforeAll(async () => {
     console.log('starting server in', directoryAsString)
 
-    await $$({stdio: 'inherit'})`pnpm install`
+    await Promise.all([$$({stdio: 'inherit'})`pnpm install`, killPort(3000)])
     void $$({stdio: 'inherit'})`pnpm start`
 
     await expect(() => fetch('http://localhost:3000')).toPass()

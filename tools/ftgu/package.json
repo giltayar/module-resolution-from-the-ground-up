@@ -1,7 +1,7 @@
 {
   "name": "@giltayar/ftgu",
   "private": false,
-  "version": "1.7.0",
+  "version": "1.8.0",
   "type": "module",
   "exports": {
     "./prepare-browser-test": {
@@ -19,11 +19,14 @@
     "prepublishOnly": "npm run build && npm run test"
   },
   "dependencies": {
-    "execa": "^9.5.2"
+    "execa": "^9.5.2",
+    "kill-port": "^2.0.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
+    "@types/kill-port": "^2.0.3",
     "@types/node": "^22.10.7",
+    "serve": "^14.2.4",
     "typescript": "^5.7.3"
   },
   "files": [

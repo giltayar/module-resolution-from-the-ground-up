@@ -7,6 +7,6 @@
     "serve": "^14.2.4"
   },
   "dependencies": {
-    "@giltayar/ftgu-browser-throttled-show": "^1.0.1"
+    "ftgu-browser-throttled-show": "^1.0.1"
   }
 }

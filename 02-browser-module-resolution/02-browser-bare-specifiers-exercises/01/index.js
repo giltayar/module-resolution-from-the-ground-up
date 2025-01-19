@@ -1,4 +1,4 @@
-import {throttledShow} from '@giltayar/ftgu-browser-throttled-show'
+import {throttledShow} from 'ftgu-browser-throttled-show'
 
 const show = throttledShow('hello, world')
 

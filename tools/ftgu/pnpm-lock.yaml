@@ -396,6 +396,10 @@ packages:
   shell-exec@1.0.2:
     resolution: {integrity: sha512-jyVd+kU2X+mWKMmGhx4fpWbPsjvD53k9ivqetutVW/BQ+WIZoDoP4d8vUMGezV6saZsiNoW2f9GIhg9Dondohg==}
 
+  shell-exec@1.1.2:
+    resolution: {integrity: sha512-v2NWVDP0ws+S7miKy2oSpJ/OuL6NKuMosPNUZLDWFBlMnBtuoZxZOwxpQJwhsFZgMb+r7frpDTT8p4OSnhkpsg==}
+    engines: {node: '>=12'}
+
   signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
 
@@ -491,7 +495,7 @@ snapshots:
   '@types/kill-port@2.0.3':
     dependencies:
       '@types/node': 22.10.7
-      shell-exec: 1.0.2
+      shell-exec: 1.1.2
 
   '@types/node@22.10.7':
     dependencies:
@@ -818,6 +822,8 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   shell-exec@1.0.2: {}
+
+  shell-exec@1.1.2: {}
 
   signal-exit@3.0.7: {}
 

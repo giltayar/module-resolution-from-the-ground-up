@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@giltayar/ftgu':
-        specifier: ^1.7.0
-        version: 1.7.0
+        specifier: ^1.8.0
+        version: 1.8.0
     devDependencies:
       '@playwright/test':
         specifier: ^1.49.1
@@ -21,8 +21,8 @@ importers:
 
 packages:
 
-  '@giltayar/ftgu@1.7.0':
-    resolution: {integrity: sha512-EDAvGauXpQw4b087cZKRlFcRK6IU16S24W6XkCefLGfgxPpxZ2G8Y6RJStLRzL3EDIiTcB5rThhTXoi1wRvKhA==}
+  '@giltayar/ftgu@1.8.0':
+    resolution: {integrity: sha512-bK7HOXHCtStAXbZK41ri2sDyYunERfPfGV/8sYdvK442tr4SWrIrweLqHSu8GsDVp5k912W0RiFRAjtpBqAKeA==}
 
   '@playwright/test@1.49.1':
     resolution: {integrity: sha512-Ky+BVzPz8pL6PQxHqNRW1k3mIyv933LML7HktS8uik0bUXNCdPhoS/kLihiO1tMf/egaJb4IutXd7UywvXEW+g==}
@@ -60,6 +60,9 @@ packages:
     resolution: {integrity: sha512-kVCxPF3vQM/N0B1PmoqVUqgHP+EeVjmZSQn+1oCRPxd2P21P2F19lIgbR3HBosbB1PUhOAoctJnfEn2GbN2eZA==}
     engines: {node: '>=18'}
 
+  get-them-args@1.3.2:
+    resolution: {integrity: sha512-LRn8Jlk+DwZE4GTlDbT3Hikd1wSHgLMme/+7ddlqKd7ldwR6LjJgTVWzBnR01wnYGe4KgrXjg287RaI22UHmAw==}
+
   human-signals@8.0.0:
     resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
     engines: {node: '>=18.18.0'}
@@ -78,6 +81,10 @@ packages:
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  kill-port@2.0.1:
+    resolution: {integrity: sha512-e0SVOV5jFo0mx8r7bS29maVWp17qGqLBZ5ricNSajON6//kmb7qqqNnml4twNE8Dtj97UQD+gNFOaipS/q1zzQ==}
+    hasBin: true
 
   npm-run-path@6.0.0:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
@@ -117,6 +124,9 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
+  shell-exec@1.0.2:
+    resolution: {integrity: sha512-jyVd+kU2X+mWKMmGhx4fpWbPsjvD53k9ivqetutVW/BQ+WIZoDoP4d8vUMGezV6saZsiNoW2f9GIhg9Dondohg==}
+
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
@@ -143,9 +153,10 @@ packages:
 
 snapshots:
 
-  '@giltayar/ftgu@1.7.0':
+  '@giltayar/ftgu@1.8.0':
     dependencies:
       execa: 9.5.2
+      kill-port: 2.0.1
 
   '@playwright/test@1.49.1':
     dependencies:
@@ -192,6 +203,8 @@ snapshots:
       '@sec-ant/readable-stream': 0.4.1
       is-stream: 4.0.1
 
+  get-them-args@1.3.2: {}
+
   human-signals@8.0.0: {}
 
   is-plain-obj@4.1.0: {}
@@ -201,6 +214,11 @@ snapshots:
   is-unicode-supported@2.1.0: {}
 
   isexe@2.0.0: {}
+
+  kill-port@2.0.1:
+    dependencies:
+      get-them-args: 1.3.2
+      shell-exec: 1.0.2
 
   npm-run-path@6.0.0:
     dependencies:
@@ -230,6 +248,8 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  shell-exec@1.0.2: {}
 
   signal-exit@4.1.0: {}
 

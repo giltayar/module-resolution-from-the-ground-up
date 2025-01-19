@@ -6,6 +6,7 @@ import {parseArgs} from 'node:util'
  */
 export function exerciseDirectory(importMetaUrl) {
   const args = parseArgs({
+    strict: false,
     options: {
       solution: {
         type: 'boolean',
@@ -19,7 +20,7 @@ export function exerciseDirectory(importMetaUrl) {
       },
     },
   })
-  const solutionIndex = parseInt(args.values.index, 10)
+  const solutionIndex = parseInt(args.values.index.toString(), 10)
   const solution =
     process.env.SOLUTION ??
     (args.values.solution
@@ -27,7 +28,10 @@ export function exerciseDirectory(importMetaUrl) {
         ? 'solution'
         : `solution-${solutionIndex}`
       : undefined)
-  const exerciseNumber = new URL('.', importMetaUrl).href.split('/').at(-2)?.replace('-test', '')
+  const exerciseNumber = new URL('.', importMetaUrl).href
+    .split('/')
+    .find((segment) => /\d+\-test$/.test(segment))
+    ?.replace('-test', '')
 
   return solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
 }

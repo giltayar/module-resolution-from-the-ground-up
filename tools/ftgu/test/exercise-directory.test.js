@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test'
 import {exerciseDirectory} from '../src/exercise-directory.js'
 
 test('exerciseDirectory', () => {
-  const importMetaUrl = new URL('./07-test/dummy-test.js', import.meta.url).href
+  const importMetaUrl = new URL('./07-test/test/test/dummy-test.js', import.meta.url).href
 
   process.env.SOLUTION = 'solution'
   expect(exerciseDirectory(importMetaUrl)).toBe('../07-solution')

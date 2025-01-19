@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}

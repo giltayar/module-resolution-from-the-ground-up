@@ -6,11 +6,9 @@ export {exerciseDirectory} from './exercise-directory.js'
  *
  * @param {string | URL} exerciseDirectory
  * @param {import('@playwright/test').TestType<{}, {}>} test
- * @param {import('@playwright/test').Expect} expect
  */
-export function prepareTest(exerciseDirectory, test, expect) {
+export function prepareTest(exerciseDirectory, test) {
   const $$ = $({cwd: exerciseDirectory})
-
   const directoryAsString =
     typeof exerciseDirectory === 'string' ? exerciseDirectory : exerciseDirectory.href
 
@@ -19,13 +17,10 @@ export function prepareTest(exerciseDirectory, test, expect) {
   }
 
   test.beforeAll(async () => {
-    console.log('starting server in', directoryAsString)
+    console.log('"pnpm install" in', directoryAsString)
 
     await $$({stdio: 'inherit'})`pnpm install`
-    void $$({stdio: 'inherit'})`pnpm start`
-
-    await expect(() => fetch('http://localhost:3000')).toPass()
-
-    return {$: $$}
   })
+
+  return {$: $$}
 }

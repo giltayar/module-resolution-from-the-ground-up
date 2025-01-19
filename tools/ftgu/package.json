@@ -1,20 +1,26 @@
 {
   "name": "@giltayar/ftgu",
   "private": false,
-  "version": "1.4.0",
+  "version": "1.5.0",
   "type": "module",
   "exports": {
     "./prepare-browser-test": {
       "types": "./dist/src/prepare-browser-test.d.ts",
       "import": "./src/prepare-browser-test.js"
+    },
+    "./prepare-nodejs-test": {
+      "types": "./dist/src/prepare-nodejs-test.d.ts",
+      "import": "./src/prepare-nodejs-test.js"
     }
   },
   "scripts": {
     "build": "tsc",
-    "test": "playwright test test/test.spec.js",
+    "test": "playwright test",
     "prepublishOnly": "npm run build && npm run test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "execa": "^9.5.2"
+  },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5",

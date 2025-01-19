@@ -7,3 +7,8 @@ and bundlers like Vite and Webpack.
 To follow this course
 
 TBD
+
+
+## Tools that are good
+
+1. Compare directories VS Code extension. Used to compare the solution folder to the exercise folder

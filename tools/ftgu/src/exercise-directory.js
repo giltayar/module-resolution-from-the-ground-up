@@ -1,4 +1,5 @@
 import {parseArgs} from 'node:util'
+import {fileURLToPath} from 'node:url'
 
 /**
  *
@@ -28,10 +29,13 @@ export function exerciseDirectory(importMetaUrl) {
         ? 'solution'
         : `solution-${solutionIndex}`
       : undefined)
-  const exerciseNumber = new URL('.', importMetaUrl).href
-    .split('/')
-    .find((segment) => /\d+\-test$/.test(segment))
-    ?.replace('-test', '')
+  const imuSegments = new URL('.', importMetaUrl).href.split('/')
+  const imuPackageSegment = imuSegments.findIndex((segment) => /\d+\-test$/.test(segment))
+  const imuPackageDir = imuSegments.slice(0, imuPackageSegment + 1).join('/')
 
-  return solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
+  const exerciseNumber = imuSegments[imuPackageSegment]?.replace('-test', '')
+
+  const dir = solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
+
+  return fileURLToPath(new URL(dir, imuPackageDir + '/'))
 }

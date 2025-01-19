@@ -16,13 +16,13 @@ importers:
         specifier: ^1.49.1
         version: 1.49.1
       '@types/node':
-        specifier: ^22.10.5
+        specifier: ^22.10.7
         version: 22.10.7
       serve:
         specifier: ^14.2.4
         version: 14.2.4
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.7.3
         version: 5.7.3
 
 packages:

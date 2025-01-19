@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       p-throttle:
-        specifier: ^4.0.0
+        specifier: ^4.1.1
         version: 4.1.1
 
 packages:

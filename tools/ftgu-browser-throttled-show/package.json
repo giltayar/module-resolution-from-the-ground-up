@@ -1,5 +1,5 @@
 {
-  "name": "@giltayar/ftgu-browser-throttled-show",
+  "name": "ftgu-browser-throttled-show",
   "private": false,
   "version": "1.0.1",
   "type": "module",
@@ -22,5 +22,9 @@
     "@types/node": "^22.10.5",
     "serve": "^14.2.4",
     "typescript": "^5.7.2"
-  }
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
 }

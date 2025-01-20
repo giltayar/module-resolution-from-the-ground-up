@@ -6,5 +6,5 @@ const {$} = prepareTest(exerciseDirectory(import.meta.url), test)
 test('test', async () => {
   const {stdout} = await $`node index.js`
 
-  await expect(stdout).toBe('hello\nworld')
+  await expect(stdout).toBe('hello\nworld\nwow!')
 })

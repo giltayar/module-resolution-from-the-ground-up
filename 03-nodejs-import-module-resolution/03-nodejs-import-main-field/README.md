@@ -1,22 +1,44 @@
 ## 03 How does Node.js use `package.json`'s `main`?
 
-- So we've seen how Node.js looks for bare specifiers - part of the algorithm goes looking in the `node_modules`
-  directory with the same name as the package, and looking for the `package.json` in there.
+Reminder: when importing a "bare specifier" (package), Node.js looks in the `node_module` folder for a package
+that has the same name and uses the `index.js` file in it as the entry point.
 
-- Node.js will look in the `main` field and the `exports` field. `exports` wins if it exists.
+But what if the file in the package is not named `index.js`? For example, here:
 
-- If only `main`, it will use that relative path to find the file.
+```js
+// index.js
+import {hello} from 'hello'
 
-- Why are there two fields? Well, as we'll see `exports` is MUCH more complicated and interesting than `main`.
+// node_modules/hello/hello.js
+export const hello = 'Hello'
+```
 
-- But let's look at `main`
+The above code shows how `index.js` is trying to import the `hello` package, but the hello package doesn't have
+an `index.js`, but rather a `hello.js`.
 
-- `main` is where Node.js looks for the entry point if you just write the name of the package as a bare specifier
-  (e.g. `hello`).
+This works if we add the following `package.json`:
 
-- But you can also "deep link" into the package, and write `hello/other-words/world.js`, and it will still work by
-  ignoring `main`!
+```json
+{
+  "main": "hello.js"
+}
+```
 
-- Nothing stops us from accessing any file we want in the package.
+Node.js will look in the `package.json` for a `main` field, and if it's there, it will use that instead of `index.js`.
 
-- This is not good, and to block this, we need to use the `exports` field
+## Using other entry points in the package
+
+It seems the `main` is not the only entry point to a package.
+
+You can use _any_ file in the package just by adding it's path to the bare specifier:
+
+```js
+// index.js
+import {world} from 'hello/other-words/world.js'
+
+// node_modules/hello/other-words/world.js
+export const world = 'World'
+```
+
+This is not good, and to block this, we need to use the `exports` field, which we will learn in the next
+lesson

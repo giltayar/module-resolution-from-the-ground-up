@@ -19,3 +19,8 @@ But instead fails to import two packages - `hello`and `world`, which should be d
 Hint:
 
 - We're used to adding packages via `pnpm install`, but nothing stops you from creating the dirctories manually!
+
+- The modules `hello` and `world` that you create shouldn't export anything. They just need to `console.log`
+  the appropriate strings.
+
+- Remember what the names of the file in each package should be to make Node.js find them?

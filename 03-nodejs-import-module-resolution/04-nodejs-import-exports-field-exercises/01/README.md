@@ -17,9 +17,11 @@ But instead fails to import two packages - `hello`and `world`, which should be d
 1. The packages `hello` and `world` exist in `node_modules`, but don't have the appropriate information
    in their `package.json` to make them work.
 
-1. Fix this!
+1. Fix this! Use the `exports` field.
 
 Hint:
 
-- The packages don't have `index.js` files in them. While you _could_ rename their files to `index.js`, a better
-  way to do it is to add something to the `package.json`.
+- The `exports` field needs to have `./` in the beginning of the path to work.
+
+- Because `exports` blocks other entry points, the `world/wow` bare-specifier needs the special `exports` that
+  specifies multiple entry points.

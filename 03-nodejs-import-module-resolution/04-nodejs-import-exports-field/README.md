@@ -1,13 +1,54 @@
 ## 04 How Node.js supports multiple entry points with `exports`
 
-- We've seen how Node.js uses the `main` field in `package.json` to figure out the entry point
+Reminder: Node.js uses the `main` field in the `package.json` of a package to figure out the entry point
 
-- But we've also seen that developers can use _any_ module they want in the package by deep-linking into them.
+We've also seen that developers can use _any_ module they want in the package by deep-linking into them.
 
-- We can use `exports` just like `main`: `"exports": "./hello.js"`
+The `exports` field blocks this:
 
-- But if the developer tries to deep-link, Node.js will throw an error.
+```js
+// index.js
+import {hello} from 'hello'
 
-- But `exports` can accept a "map" of entry points, where you can specify others and map them to files in the package!
+// node_modules/hello/hello.js
+export const hello = 'Hello'
+```
 
-- This enables you to define multiple entry points to the package, and have the users of the package use _only_ them.
+To make this work, we define the `hello/package.json` thus:
+
+```json
+{
+  "exports": "./hello.js"
+}
+```
+
+Note how you need to specify the `./` at the beginning of the path. Otherwise Node.js throws an error.
+
+But what about this?
+
+```js
+// index.js
+import {world} from 'hello/other-words/world'
+
+// node_modules/hello/other-words/world
+export const world = 'World'
+```
+
+The `exports` blocks any other exports, so this won't work.
+
+Unless...
+
+```json
+{
+  "exports": {
+    ".": "./hello.js",
+    "./others/world": "./world.js"
+  }
+}
+```
+
+The `exports` fields accept a "map" of entry points, where you can specify others and map them to files in the package!
+
+This enables us to define multiple entry points to the package, and have the users of the package use _only_ them.
+
+If the developer tries to deep-link, Node.js will throw an error.

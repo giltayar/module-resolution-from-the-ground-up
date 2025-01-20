@@ -3,7 +3,7 @@ import {prepareTest} from '../src/prepare-nodejs-test.js'
 
 const {$} = prepareTest(new URL('./08-test', import.meta.url), test)
 
-test('test', async ({page}) => {
+test('test', async () => {
   const {stdout} = await $({lines: true})`node index.js`
 
   await expect(stdout).toStrictEqual([
@@ -16,7 +16,7 @@ test('test', async ({page}) => {
 })
 
 test('prepare test fails on non-existing directory', () => {
-  expect(() => prepareTest('../non-existing-directory', test)).toThrowError(
-    /exercise directory .+ does not exist/
-  )
+  expect(() =>
+    prepareTest(new URL('../non-existing-directory', import.meta.url), test)
+  ).toThrowError(/exercise directory .+ does not exist/)
 })

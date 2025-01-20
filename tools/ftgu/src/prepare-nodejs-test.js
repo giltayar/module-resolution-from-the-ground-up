@@ -1,25 +1,29 @@
 import {$} from 'execa'
 import fs from 'node:fs'
+import {fileURLToPath} from 'node:url'
+import {relative} from 'node:path'
 export {exerciseDirectory} from './exercise-directory.js'
 
 /**
  *
- * @param {string | URL} exerciseDirectory
+ * @param {string | URL} exerciseDirectoryUrl
  * @param {import('@playwright/test').TestType<{}, {}>} test
  */
-export function prepareTest(exerciseDirectory, test) {
-  const $$ = $({cwd: exerciseDirectory})
-  const directoryAsString =
-    typeof exerciseDirectory === 'string' ? exerciseDirectory : exerciseDirectory.href
+export function prepareTest(exerciseDirectoryUrl, test) {
+  const $$ = $({cwd: exerciseDirectoryUrl})
+  const exerciseDirectory = fileURLToPath(
+    typeof exerciseDirectoryUrl === 'string' ? exerciseDirectoryUrl : exerciseDirectoryUrl
+  )
+  const excersiseDirectoryRelative = relative(process.cwd(), exerciseDirectory)
 
   if (!fs.existsSync(exerciseDirectory)) {
-    throw new Error(`exercise directory ${directoryAsString} does not exist`)
+    throw new Error(`exercise directory ${excersiseDirectoryRelative} does not exist`)
   }
 
   test.beforeAll(async () => {
-    console.log('"pnpm install" in', directoryAsString)
+    console.log('"pnpm install" in', excersiseDirectoryRelative)
 
-    await $$({stdio: 'inherit'})`pnpm install`
+    await $$`pnpm install`
   })
 
   return {$: $$}

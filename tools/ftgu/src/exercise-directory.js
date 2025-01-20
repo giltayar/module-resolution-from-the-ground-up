@@ -1,5 +1,4 @@
 import {parseArgs} from 'node:util'
-import {fileURLToPath} from 'node:url'
 
 /**
  *
@@ -37,5 +36,5 @@ export function exerciseDirectory(importMetaUrl) {
 
   const dir = solution ? `../${exerciseNumber}-${solution}` : `../${exerciseNumber}`
 
-  return fileURLToPath(new URL(dir, imuPackageDir + '/'))
+  return new URL(dir, imuPackageDir + '/')
 }

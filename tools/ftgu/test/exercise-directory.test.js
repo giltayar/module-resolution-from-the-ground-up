@@ -7,25 +7,17 @@ test('exerciseDirectory', () => {
   const testPackage = new URL('./07-test/test', import.meta.url).href
 
   process.env.SOLUTION = 'solution'
-  expect(exerciseDirectory(importMetaUrl)).toBe(
-    fileURLToPath(new URL('../07-solution', testPackage))
-  )
+  expect(exerciseDirectory(importMetaUrl)).toStrictEqual(new URL('../07-solution', testPackage))
 
   delete process.env.SOLUTION
-  expect(exerciseDirectory(importMetaUrl)).toBe(fileURLToPath(new URL('../07', testPackage)))
+  expect(exerciseDirectory(importMetaUrl)).toStrictEqual(new URL('../07', testPackage))
 
   process.argv = ['node', 'tools/ftgu/test/test.spec.js', '--solution']
-  expect(exerciseDirectory(importMetaUrl)).toBe(
-    fileURLToPath(new URL('../07-solution', testPackage))
-  )
+  expect(exerciseDirectory(importMetaUrl)).toStrictEqual(new URL('../07-solution', testPackage))
 
   process.argv = ['node', 'tools/ftgu/test/test.spec.js', '--solution', '--index=2']
-  expect(exerciseDirectory(importMetaUrl)).toBe(
-    fileURLToPath(new URL('../07-solution-2', testPackage))
-  )
+  expect(exerciseDirectory(importMetaUrl)).toStrictEqual(new URL('../07-solution-2', testPackage))
 
   process.argv = ['node', 'tools/ftgu/test/test.spec.js', '-s', '-i', '2']
-  expect(exerciseDirectory(importMetaUrl)).toBe(
-    fileURLToPath(new URL('../07-solution-2', testPackage))
-  )
+  expect(exerciseDirectory(importMetaUrl)).toStrictEqual(new URL('../07-solution-2', testPackage))
 })

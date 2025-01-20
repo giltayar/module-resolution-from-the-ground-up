@@ -10,13 +10,15 @@ declare global {
 test('should show message in interval', async ({page}) => {
   await page.goto('/test/index.html')
 
-  await page.evaluate(() => {
-    const show = window.throttledShow('hello', {interval: 1000})
+  await expect(() =>
+    page.evaluate(() => {
+      const show = window.throttledShow('hello', {interval: 1000})
 
-    for (const i of [1, 2, 3]) {
-      show()
-    }
-  })
+      for (const i of [1, 2, 3]) {
+        show()
+      }
+    })
+  ).toPass()
 
   await expect(page.locator('#root')).toHaveText('hello')
 

@@ -8,6 +8,6 @@
     "@types/node": "^22.10.7"
   },
   "dependencies": {
-    "@giltayar/ftgu": "^1.8.0"
+    "@giltayar/ftgu": "^2.0.0"
   }
 }

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@giltayar/ftgu':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       '@playwright/test':
         specifier: ^1.49.1
@@ -21,8 +21,8 @@ importers:
 
 packages:
 
-  '@giltayar/ftgu@1.8.0':
-    resolution: {integrity: sha512-bK7HOXHCtStAXbZK41ri2sDyYunERfPfGV/8sYdvK442tr4SWrIrweLqHSu8GsDVp5k912W0RiFRAjtpBqAKeA==}
+  '@giltayar/ftgu@2.0.0':
+    resolution: {integrity: sha512-MoMIeQWMjLrL2nY+Kb3R4RDUIsxuKPv3vx0SkvRmDmtfAB31GYXfD+jPaUFtAA95IVVSeadvHxz8OZSAXslMSQ==}
 
   '@playwright/test@1.49.1':
     resolution: {integrity: sha512-Ky+BVzPz8pL6PQxHqNRW1k3mIyv933LML7HktS8uik0bUXNCdPhoS/kLihiO1tMf/egaJb4IutXd7UywvXEW+g==}
@@ -153,7 +153,7 @@ packages:
 
 snapshots:
 
-  '@giltayar/ftgu@1.8.0':
+  '@giltayar/ftgu@2.0.0':
     dependencies:
       execa: 9.5.2
       kill-port: 2.0.1

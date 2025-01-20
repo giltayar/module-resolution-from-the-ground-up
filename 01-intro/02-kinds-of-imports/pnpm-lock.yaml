@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       p-throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
+        specifier: ^7.0.0
+        version: 7.0.0
 
 packages:
 
-  p-throttle@4.1.1:
-    resolution: {integrity: sha512-TuU8Ato+pRTPJoDzYD4s7ocJYcNSEZRvlxoq3hcPI2kZDZ49IQ1Wkj7/gDJc3X7XiEAAvRGtDzdXJI0tC3IL1g==}
-    engines: {node: '>=10'}
+  p-throttle@7.0.0:
+    resolution: {integrity: sha512-aio0v+S0QVkH1O+9x4dHtD4dgCExACcL+3EtNaGqC01GBudS9ijMuUsmN8OVScyV4OOp0jqdLShZFuSlbL/AsA==}
+    engines: {node: '>=18'}
 
 snapshots:
 
-  p-throttle@4.1.1: {}
+  p-throttle@7.0.0: {}

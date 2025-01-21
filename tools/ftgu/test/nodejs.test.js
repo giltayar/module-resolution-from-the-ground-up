@@ -6,7 +6,7 @@ const {$} = prepareTest(new URL('./08-test', import.meta.url), test)
 test('test', async () => {
   const {stdout} = await $({lines: true})`node index.js`
 
-  await expect(stdout).toStrictEqual([
+  expect(stdout).toStrictEqual([
     'hello world',
     'hello world',
     'hello world',

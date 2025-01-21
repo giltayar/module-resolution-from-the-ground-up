@@ -6,7 +6,7 @@ const {$} = prepareTest(exerciseDirectory(import.meta.url), test)
 test('test', async () => {
   const {stdout} = await $({lines: true})`node index.js`
 
-  await expect(stdout).toStrictEqual([
+  expect(stdout).toStrictEqual([
     'Hello, World!',
     'Hello, World!',
     'Hello, World!',

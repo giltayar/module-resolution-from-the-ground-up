@@ -1,15 +1,34 @@
 ## 01 How does Node.js resolve `import` with relative specifiers?
 
-- We've seen how browsers do module resolution, and we saw how simple they implement relative specifiers and even
-  bare specifiers
+Reminder: module resolution with relative specifiers is easy - just do URL absolutization based on the current
+module URL.
 
-- Let's go to the backend - how does Node.js do module resolution on `import` ?
+In the browser, bare specifiers (e.g. `p-throttle`) don't work unless an importmap is supplied that maps them
+to URLs.
 
-- Notice that Node.js also supports CommonJS, i.e. `require`, but the module resolution is different (and more
-  complex!) there, so we'll talk about it later.
+Now we're going to talk about how Node.js does module resolution, and we'll start with relative specifiers:
 
-- Relative paths work _exactly_ like in the browser. This is by _design_ so that code that works in Node.js will
-  work exactly as is in Node.js
+```js
+// index.js
+import {show} from './show-utils/show.js'
 
-- So the algorithm is simple - you take the current path as a `file:` URL and you use the relative path in the
-  specifier, and absolutize it. Just like `<img src>` !
+// show-utils/show.js
+export function show(message) {
+  console.log(message)
+}
+```
+
+---
+
+Same as the browser, the final module specifier URL is calculated by resolving the path specifier
+with the current URL of the module.
+
+Yes, ESM always deals with URL-s, even if our modules are on the disk. Node.js URL-s don't start with
+`http://`, but rather with `file://`, e.g.
+
+```txt
+file:///user/giltayar/code/some-dir/some-file.js
+```
+So relative paths work _exactly_ like in the browser.
+
+This is by _design_ so that code that works in Node.js will work exactly as is in Node.js

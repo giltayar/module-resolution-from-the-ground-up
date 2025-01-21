@@ -16,7 +16,9 @@ But instead fails to import the imports that start with `#`.
 
 1. Run `node index.js` and watch it fail to import imports that start with `#`.
 
-1. Fix this! Create the correct `imports` field in `package.json` so that those imports work
+1. Fix this! Create the correct `imports` field in `package.json` so that those imports work.
+
+---
 
 Hint:
 

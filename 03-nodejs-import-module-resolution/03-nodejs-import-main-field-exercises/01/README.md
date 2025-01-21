@@ -1,6 +1,6 @@
 # Exercise #1
 
-Running `index.js` should output
+Running `index.js` should output:
 
 ```txt
 hello
@@ -18,6 +18,8 @@ But instead fails to import two packages - `hello`and `world`, which should be d
    in their `package.json` to make them work.
 
 1. Fix this!
+
+---
 
 Hint:
 

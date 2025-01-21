@@ -16,6 +16,8 @@ export const hello = 'Hello'
 The above code shows how `index.js` is trying to import the `hello` package, but the hello package doesn't have
 an `index.js`, but rather a `hello.js`.
 
+---
+
 This works if we add the following `package.json`:
 
 ```json
@@ -25,6 +27,8 @@ This works if we add the following `package.json`:
 ```
 
 Node.js will look in the `package.json` for a `main` field, and if it's there, it will use that instead of `index.js`.
+
+---
 
 ## Using other entry points in the package
 

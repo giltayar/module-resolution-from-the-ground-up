@@ -1,4 +1,4 @@
-# Node.js "import" field
+# The Node.js "import" field
 
 Reminder: when you import a package, Node.js finds a package directory in the `node_modules`,
 looks at its `package.json` to find the `exports` field that defines the entry points to the package.
@@ -24,6 +24,10 @@ That `#show` specifier points to a place _within_ the package, and is defined in
 }
 ```
 
-The `#` prefix is not optional - it is mandatory.
+---
 
-Also, you don't have to specify a relative path - you can use any specifier, including a bare specifier!
+Notes:
+
+- The `#` prefix is not optional - it is mandatory.
+
+- You can specify not only a relative path - you can use any specifier, including a bare specifier!

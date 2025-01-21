@@ -18,6 +18,8 @@ Here we're trying to import the package `p-throttle`.
 Node.js doesn't (yet!) support importmaps. What it does support is looking for the package directory in the
 `node_modules` directory, because that is where `npm install` installs them.
 
+---
+
 1. Node.js looks in the current directory of the current file for a `node_modules` directory.
 
    - It's not there? Look one directory above (all the way to the root of the filesystem), recursively, till it finds it.
@@ -35,6 +37,8 @@ Node.js doesn't (yet!) support importmaps. What it does support is looking for t
 
    - Not there? throw an error.
 
+---
+
 In our example:
 
 ```
@@ -47,6 +51,8 @@ In our example:
 
 The `import 'p-throttle'` in `<some-dir>/some-file.js`
 resolves to `<some-dir>/node_modules/p-throttle/index.js`.
+
+---
 
 If `some-file` would have been in a sub-directory, e.g.
 

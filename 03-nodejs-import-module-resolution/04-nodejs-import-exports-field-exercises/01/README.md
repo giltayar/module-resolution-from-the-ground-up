@@ -19,6 +19,8 @@ But instead fails to import two packages - `hello`and `world`, which should be d
 
 1. Fix this! Use the `exports` field.
 
+---
+
 Hint:
 
 - The `exports` field needs to have `./` in the beginning of the path to work.

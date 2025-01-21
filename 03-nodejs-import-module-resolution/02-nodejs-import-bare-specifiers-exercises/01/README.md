@@ -3,7 +3,7 @@
 Running `index.js` should output
 
 ```txt
-hello
+hello world
 world
 ```
 
@@ -15,6 +15,8 @@ But instead fails to import two packages - `hello`and `world`, which should be d
 
 1. Create the missing packages so that the two imports (to `hello` and to `world`) will output each the appropriate
    line to the console.
+
+---
 
 Hint:
 

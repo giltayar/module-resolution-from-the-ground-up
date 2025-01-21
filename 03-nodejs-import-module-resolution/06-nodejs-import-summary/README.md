@@ -8,6 +8,8 @@
 
 - This means that the file extension of the file _must_ be specified.
 
+---
+
 ## Module resolution for bare specifiers
 
 - If the specifier is a bare specifier:
@@ -24,6 +26,8 @@
 
 - When `main` is used, the user of the package can "deep link" into the package by specifying the path to the file
   they want to import (e.g. `import { goodbye } from 'hello/goodbye.js')`).
+
+---
 
 - But `exports` blocks that ability, and adds the ability to have multiple entry points:
 

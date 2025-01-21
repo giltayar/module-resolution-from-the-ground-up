@@ -24,6 +24,8 @@ To make this work, we define the `hello/package.json` thus:
 
 Note how you need to specify the `./` at the beginning of the path. Otherwise Node.js throws an error.
 
+---
+
 But what about this?
 
 ```js
@@ -49,6 +51,9 @@ Unless...
 
 The `exports` fields accept a "map" of entry points, where you can specify others and map them to files in the package!
 
+---
+
 This enables us to define multiple entry points to the package, and have the users of the package use _only_ them.
 
-If the developer tries to deep-link, Node.js will throw an error.
+If the developer tries to deep-link into the package through a path that is not in the `exports`,
+Node.js will throw an error.

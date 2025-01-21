@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "imports": {
+    "#hello": "./words/hello.js",
+    "#world": "./words/world.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "cd ../01-test && pnpm test"
+  },
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  }
+}

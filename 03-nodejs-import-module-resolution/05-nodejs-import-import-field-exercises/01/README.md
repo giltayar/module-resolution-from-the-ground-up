@@ -3,25 +3,26 @@
 Running `index.js` should output
 
 ```txt
-hello
-world
-wow!
+hello world
+hello world
+hello world
+hello world
+hello world
 ```
 
-But instead fails to import two packages - `hello`and `world`, which should be doing the output.
+But instead fails to import the imports that start with `#`.
 
 1. Run `pnpm install` to install dependencies.
 
-1. Run `node index.js` and watch it fail to import `hello`.
+1. Run `node index.js` and watch it fail to import imports that start with `#`.
 
-1. The packages `hello` and `world` exist in `node_modules`, but don't have the appropriate information
-   in their `package.json` to make them work.
-
-1. Fix this! Use the `exports` field.
+1. Fix this! Create the correct `imports` field in `package.json` so that those imports work
 
 Hint:
 
-- The `exports` field needs to have `./` in the beginning of the path to work.
+- You have two kinds of imports - those that point to relative paths inside the package (`#hello` and `#world`),
+  and those that point to another package (`#throttle`)
 
-- Because `exports` blocks other entry points, the `world/wow` bare-specifier needs the special `exports` that
-  specifies multiple entry points.
+- The files `hello.js` and `show.js` are in the `words` directory
+
+- The package to be used is the usual `p-throttle`.

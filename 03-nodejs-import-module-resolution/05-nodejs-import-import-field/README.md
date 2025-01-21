@@ -1,15 +1,22 @@
 # Node.js "import" field
 
-- When you import a package, Node.js finds a package directory in the `node_modules`, it looks at its `package.json` to find
-  the `exports` field that defines the entry points to the package.
+Reminder: when you import a package, Node.js finds a package directory in the `node_modules`,
+looks at its `package.json` to find the `exports` field that defines the entry points to the package.
 
-- So exports is used from _without_ the package, to figure out what modules to import inside it.
+So exports is used from _without_ the package, to figure out what modules to import inside it.
 
-- When you import a module _within_ a package, you use relative specifiers, e.g `'./other-words/hello.js`.
+There is an "exports"-like mechanism to be used _inside_ the package:
 
-- Node.js allows a third option - entry points that can be used _within_ a package:
+```js
+// index.js
+import {show} from '#show'
+import throttle from 'p-throttle'
+```
+
+That `#show` specifier points to a place _within_ the package, and is defined in the `package.json`:
 
 ```json
+// package.json
 {
   "imports": {
     "#show": "./show-utils/show.js"
@@ -17,10 +24,6 @@
 }
 ```
 
-- And using it...
+The `#` prefix is not optional - it is mandatory.
 
-```js
-import {show} from '#show'
-```
-
-- This option is rarely used, so I'm not going to talk about it more than the above.
+Also, you don't have to specify a relative path - you can use any specifier, including a bare specifier!

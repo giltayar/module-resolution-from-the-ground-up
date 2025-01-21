@@ -1,7 +1,7 @@
-import throttle from 'p-throttle'
-import {show} from './show.js'
+import throttle from '#throttle'
 import {hello} from '#hello'
 import {world} from '#world'
+import {show} from './show.js'
 
 const throttledShow = throttle({interval: 500, limit: 1})(show)
 

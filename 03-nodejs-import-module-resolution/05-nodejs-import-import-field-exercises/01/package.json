@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "imports": {},
   "scripts": {
     "start": "node index.js",
     "test": "cd ../01-test && pnpm test"

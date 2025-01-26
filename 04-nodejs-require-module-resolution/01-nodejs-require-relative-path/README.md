@@ -1,42 +1,60 @@
-## 01 How does `require` module resolution work for relative paths?
+# 01 How does `require` module resolution work for relative paths?
 
-- We've seen how Node.js does module resolution when the developers uses ESM's `import`.
+Reminder: Node.js has support for ESM `import`
 
-- But what happens when the code is using CommonJS? Uses `const {something} = require('./something.js')`?
+We've seen how relative specifiers work exactly like in the browser - you MUST have the extension because
+it's taking the path as is.
 
-- Before talking about the more
+We've seen how Node.js travels up the `node_modules` chain looking for the package directory, and we've seen
+all the flags that are looked at in `package.json`, like `main` and `exports`.
 
-- Module resolution of `require` is a _superset_ of module resolution of `import`!
+```js
+// index.js
+const {world} = require('./say/world.js')
 
-- So all the rules we found for `import` also work for `require`. Except that they are _looser_. As an example.
-  If I have
-
-```jsx
-import { hello } from "./say-hello.js";
+// say/world.js
+module.exports.world = 'world'
 ```
 
-- Then the same would work with `require`:
+As we can see above, relative specifiers in CommonJS work _just_ like in ESM.
 
-```jsx
-const { require } = require("./say-hello.js");
+But this works also without the extension:
+
+```js
+// index.js
+const {world} = require('./say/world')
+
+// say/world.js
+module.exports.world = 'world'
 ```
 
-- Nobody uses extensions in CommonJS, but they _do_ work! But CommonJS also works without the extension:
+Node.js "guesses" the extension, and searches for files that have the following extensions:
+`.js`, `.cjs`, `.mjs`, `.json`, `.node`.
 
-```jsx
-const { require } = require("./say-hello");
+`.cjs` and `.mjs` are like `.js`, and we'll talk about them in a bit.
+`.json` you all know, and `.node` is a rarely used "binary" file
+
+But there's another option!
+
+```js
+// index.js
+const {require} = require('./say/world')
+
+// say/world/index.js
+module.exports.world = 'world'
 ```
 
-- How does this work? Well, Node.js "guesses" the extension, and searches for files that have the following
-  extensions:
+Node.js will also look for a directory named `say-hello` that has an `index.js` in it.
 
-- `.js`, `.cjs`, `.mjs`, `.json`, `.node`
+And... instead of `index.js` you can have a `package.json` with a `main/exports` field too:
 
-- `.cjs` and `.mjs` are like `.js`, and we'll talk about them in a bit. `.json` you all know, and `.node` is a
-  rarely used "binary" file
+```js
+// index.js
+const {require} = require('./say/world')
 
-- But it gets worse! It will also look for a directory named `say-hello` that has an `index.js` in it.
+// say/world/package.json
+{"main": "./foo.js"}
 
-- And... worse! Instead of `index.js` you can have a `package.json` with a `main/exports` field too.
-
-- This is actually how Node.js works with directorys in `node_modules` for `import`! Same algorithm...
+// say/world/foo.js
+module.exports.world = 'world'
+```

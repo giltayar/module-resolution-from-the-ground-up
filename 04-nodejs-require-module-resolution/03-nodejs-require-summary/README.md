@@ -15,6 +15,8 @@
 - If not, look for a directory with that name, and look for an `index.js` or `package.json`.
   In essence treat that directory like a package directory, from the algorithm for bare specifiers
 
+---
+
 ## Module resolution for bare specifiers
 
 - If the specifier is a bare specifier:
@@ -28,6 +30,8 @@
   - ...or a `package.json` with a `main` or `exports` field (`exports` wins).
 
   - In both cases, the `exports` points to the file that is the entry point.
+
+---
 
 - When `main` is used, the user of the package can "deep link" into the package by specifying the path to the file
   they want to import (e.g. `const { goodbye } = require('hello/goodbye.js')`).

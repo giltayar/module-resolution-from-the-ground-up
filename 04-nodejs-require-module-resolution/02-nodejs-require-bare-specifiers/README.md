@@ -16,6 +16,7 @@ module.exports = function throttle() {
   //...
 }
 ```
+---
 
 So it works the same, with support for:
 

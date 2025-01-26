@@ -18,6 +18,8 @@ module.exports.world = 'world'
 
 As we can see above, relative specifiers in CommonJS work _just_ like in ESM.
 
+---
+
 But this works also without the extension:
 
 ```js
@@ -33,6 +35,8 @@ Node.js "guesses" the extension, and searches for files that have the following 
 
 `.cjs` and `.mjs` are like `.js`, and we'll talk about them in a bit.
 `.json` you all know, and `.node` is a rarely used "binary" file
+
+---
 
 But there's another option!
 

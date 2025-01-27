@@ -1,42 +1,120 @@
 # 05 Module Type
 
-- Module resolution works differently if we use `import` and if we use `require`. For relative paths, `import`
-  module resolution is simple and like the browser, and for bare specifiers and for relative paths in the
-  `require` case, everything is more complicated and the algorithm involves guessing extensions and going up
-  directorys looking for the right directory in `node_modules`, and using `package.json` fields `main` and `export`.
+Reminder: module resolution works differently if we use `import` and if we use `require`.
+For relative paths, `import` module resolution is simple and like the browser,
+and for bare specifiers and for relative paths in the `require` case,
+everything is more complicated and the algorithm involves guessing extensions and going up
+directorys looking for the right directory in `node_modules`, and using `package.json` fields `main` and `export`.
 
-- But let's think about _where_ `import` and `require` are used. In most cases, `import` is used in ESM files,
-  and `require` is used in CommonJS. I actually _can't_ use `import` in CommonJS regularly, and _can't use
-  `require`_ in ESM regularly.
+Where is `import` and `require` used?
 
-- But there are cases where I can: `await import(...)` can be used in CommonJS, and you can with some
-  additional lines of code, you can use `require` in ESM.
+- `import` is used in ESM files. We _can't_ use `import` statements in CommonJS files!
 
-- So what about the _target_ file? Once Node.js finds a file, how does it know whether it's an ESM or a
-  CommonJS file?
+- `require` is used in CommonJS files. We _can't_ use `require` in ESM files!
 
-- This is important, because besides the difference of using/not using `import` and `require`, there are
-  various minor differences in how JavaScript executes ESM or CommonJS.
+So if this file is a CommonJS file, this will fail:
 
-  - For example, in ESM, the `this` in the top-level is `undefined` and in CommonJS it is equal to `globalThis`.
+```js
+// some-commonjs-file.js
+const {hello} = require('./hello')
+import {world} from './world.js' // this fails!
+```
 
-  - For example, in ESM, you can use top-level await, and in CommonJS you can't.
+And the same for ESM file
 
-- Once Node.js finds a file, how does it know whether it's an ESM or a CommonJS file?
+```js
+// some-esm-file.js
+const {hello} = require('./hello') // this fails!
+import {world} from './world.js'
+```
 
-- The answer is somewhat complicated, but it starts with - it looks at the extension.
+So the same file is treated differently if the file is ESM or CommonJS.
 
-- If the extension is `.cjs`, then it's CommonJS
+But _how_ does Node.js know whether the file is ESM or CommonJS?
 
-- If the extension is `.mjs`, then it's ESM
+One answer could be - if we `import` a file, then we will treat it as ESM, and if we `require` it, we will
+treat it as CommonJS.
 
-- If it's `.js`, then it has to look at the "nearest" `package.json` (by going up the directorys and looking for a
-  `package.json`)
+But Node.js allows us to `import` a CommonJS file, so that is not the answer.
 
-  - If it has `type: module` then the file is ESM
+The answer is - by the file extension!
 
-  - If it has `type: commonjs` then the file is CommonJS
+- `.mjs`: the file is ESM
+- `.cjs`: the file is CommonJS
 
-  - If there is no `type` or no `package.json`, then the file is CommonJS
+So:
 
-- If it's `.json`? Well, then it doesn't matter - it's just JSON.
+```js
+// index.mjs
+import {hello} from `./hello.mjs`
+import {world} from `./world.cjs`
+
+console.log(hello, world)
+
+// hello.mjs
+export const hello = 'hello'
+
+// world.cjs
+module.exports.world = 'world'
+```
+
+This works! Because the file extensions tell Node.js which file is CommonJS and which is ESM.
+
+But what about `.js`? `.js` by default is CommonJS, unless...
+
+```js
+// index.js
+import {hello as hello2} from './esm/hello.js'
+import {world as world2} from './commonjs/world.js'
+
+// package.json
+{"type": "module"}
+
+// commonjs/package.json
+{"type": "commonjs"}
+
+// esm/hello.js
+export const hello = 'hello'
+
+// commonjs/world.js
+module.exports.world = 'world'
+```
+
+When Node.js encounters a `.js` file, it:
+
+1. Goes up the tree to the first `package.json` it encounters.
+1. If it includes `type: module`, then all `.js` files in its "boundary" are ESM
+1. If it includes `type: commonjs`, then all `.js` files in its "boundary" are CommonJS
+1. Otherwise, the file is CommonJS
+
+So in our example:
+
+- `commonjs/world.js` is CommonJS because it is in a folder with `package.json` with `type: commonjs`
+- `esm/hello.js` is ESM because a _parent_ folder has a `package.json` with `type: module`
+
+## Using `import` in CommonJS
+
+As an aside - you _can_ use `import` in CommonJS, but not as a statement:
+
+```js
+// index.cjs
+async function main() {
+  const {hello} = await import('./hello.mjs') // use the import "function"
+
+  console.log(hello)
+}
+```
+
+## Using `require` in ESM
+
+As an aside - you _can_ use `require` in ESM, but you need to "create" it:
+
+```js
+// index.mjs
+import {createRequire} from 'module'
+const require = createRequire(import.meta.url)
+
+const {hello} = require('./hello.cjs')
+
+console.log(hello)
+```

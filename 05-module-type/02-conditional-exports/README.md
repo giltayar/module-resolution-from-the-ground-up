@@ -1,59 +1,99 @@
 # 06 Conditional Exports
 
-- The rules for determining the target files file type (i.e. CommonJS or ESM) are based on file extension:
+Reminder: the rules for determining the target files file type (i.e. CommonJS or ESM) are based on file extension:
 
-  - `.cjs` for CommonJS
+- `.cjs` for CommonJS
 
-  - `.mjs` for ESM
+- `.mjs` for ESM
 
-  - `.js` looks for nearest `package.json` and uses the `type` field to determine file type
+- `.js` looks for "nearest" `package.json` and uses the `type` field to determine file type
 
-- So the target file type is unambiguous!
 
-- No matter what the source file type is (ESM or CommonJS), the target file type does not rely on it.
 
-- This is usually great, but really bad for library writers.
+Can we create a file that we can both `import` and `require`? Yes! Just make it CommonJS,
+because Node.js allows `import`-ing CommonJS modules.
 
-- What if they want to write a package that works both if you `require` it and if you `import` it?
+Can we create an _ESM_ file that we can both `import` and `require`? No! Because Node.js
+does not allow `require`-ing ESM!
 
-- You use "conditional exports".
+Modules are unambiguous - they can't be both ESM and CommonJS!
 
-- The "exports" field enables multiple entry points to the package, and also blocks the user of the package
-  from accessing its internals.
-
-- The map from the name of the entry point to the file is usually like this:
-
-```json
-{
-  "type": "module",
-  "exports": {
-    ".": "./src/index.js"
-  }
-}
-```
-
-- This tells Node.js that no matter whether we're `import`-ing or using `require`, the entry point should be
-  `./src/index.js`.
-
-- But it can also be "conditional":
+Let's look at this package:
 
 ```js
+// index.mjs
+import {hello} from 'hello'
+
+// node_modules/
+//   hello/
+//     index.mjs
+export const hello = 'hello'
+```
+
+I can _import_ this package. Can I `require` it? Can I do this?
+
+```js
+// index.cjs
+const {hello} = require('hello')
+
+// node_modules/
+//   hello/
+//     index.mjs
+export const hello = 'hello'
+```
+
+We can't create an ESM package that both works for ESM and CommonJS.
+
+This creates a problem for library packages. If their code stays in CommonJS, it works for both ESM and CommonJS,
+but library authors don't want to stay in CommonJS, because that means that _they_ can't use ESM packages.
+
+Let's build a dual-mode library with conditional exports!
+
+
+```js
+// index.mjs
+import {hello} from 'hello'
+
+// index.cjs
+const {hello} = require('hello')
+
+// node_modules/
+//   hello/
+//     index.mjs
+export const hello = 'hello, ESM'
+
+// node_modules/
+//   hello/
+//     index.cjs
+module.exports.hello = 'hello, CommonJS'
+
+// node_modules/
+//   hello/
+//     package.json
 {
-  "type": "module",
   "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.cjs"
+    "./": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
     }
   }
 }
 ```
 
-- Now we're telling Node.js that if the user is using `import`, they should get `./src/index.js`, but if
-  they're using `require`, they should get `./src/index.cjs`.
+With conditional exports (`import` vs `require` in the export) we're telling Node.js that
+if the importer is using `import`, the resolution should be to `./hello.mjs`,
+and if they're using `require`, it should resolve to `./src/hello.cjs`.
 
-- We can see this happening in [`index.js`](./index.js), that `import`-s and `require` the same package and
-  yet gets different results.
+Custom conditions are evaluated from the first to the last - the first one who's condition is satisfied wins.
 
-- Custom conditions are evaluated from the first to the last - the first one who's condition is satisfied wins.
+There are other conditions, although those two are the most important:
 
+- `default`: usually the last, and is always "true"
+
+- `node`: both `import` and `require`, but only for Node.js.
+
+We'll see that the community has adapted custom conditions for their use, and defined:
+
+-`types`: the `.d.ts` file of the entry point, to define the TypeScritp types of that entrypoint
+- `browser`: the condition when you want a file that works in the browser (as opposed to the `node` condition
+  which applies when the code is being used in Node.js).

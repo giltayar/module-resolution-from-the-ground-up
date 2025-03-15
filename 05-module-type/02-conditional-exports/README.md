@@ -8,8 +8,6 @@ Reminder: the rules for determining the target files file type (i.e. CommonJS or
 
 - `.js` looks for "nearest" `package.json` and uses the `type` field to determine file type
 
-
-
 Can we create a file that we can both `import` and `require`? Yes! Just make it CommonJS,
 because Node.js allows `import`-ing CommonJS modules.
 
@@ -49,7 +47,6 @@ but library authors don't want to stay in CommonJS, because that means that _the
 
 Let's build a dual-mode library with conditional exports!
 
-
 ```js
 // index.mjs
 import {hello} from 'hello'
@@ -86,6 +83,8 @@ and if they're using `require`, it should resolve to `./src/hello.cjs`.
 
 Custom conditions are evaluated from the first to the last - the first one who's condition is satisfied wins.
 
+## Other conditions
+
 There are other conditions, although those two are the most important:
 
 - `default`: usually the last, and is always "true"
@@ -97,3 +96,10 @@ We'll see that the community has adapted custom conditions for their use, and de
 -`types`: the `.d.ts` file of the entry point, to define the TypeScritp types of that entrypoint
 - `browser`: the condition when you want a file that works in the browser (as opposed to the `node` condition
   which applies when the code is being used in Node.js).
+
+## Developing a dual-mode library
+
+If I want to write a dual mode library, do I have to write it in twice - once as ESM and once as CommonJS?
+
+No! What developers usually do to deal with this is to write the code in TypeScript, and transpile the code - once
+to CommonJS and once to ESM.

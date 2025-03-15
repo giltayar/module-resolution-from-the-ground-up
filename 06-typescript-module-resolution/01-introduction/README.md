@@ -11,11 +11,16 @@
       hello.ts --> dist/hello.js
   ```
 
-- This is what TypeScript does. But it does more.
+- This is what TypeScript does.
+
+- In our package this is done via `pnpm run build`, which runs `tsc` which is the TypeScript transpiler. And
+  then to run the transpiled code, we run `node dist/hello.js`.
+
+- The process of transpilation also does module resolution!
 
 - Let's look at `index.ts`:
 
-  ```typescript
+  ```ts
   import {hello} from './hello.js'
 
   console.log(hello)
@@ -23,11 +28,11 @@
 
 - TypeScript does three things in the `import` statement
 
-  1. Resolves the module specifier `./hello.js` to a file path
+  1. Resolves the module specifier `./hello.js` to a file path (`hello.ts`)
 
-  1. Transpiles the TypeScript code to JavaScript
+  1. Transpiles the `index.ts` TypeScript code to JavaScript
 
-  1. Determines the type of `hello` to enable type checking
+  1. Determines the type of `hello.ts` to enable type checking
 
 - In our directory:
 
@@ -42,4 +47,7 @@
 
 - And determines what the types are accoording to a fixed set of rules
 
-- To understand these three, we need to understand the various options
+- To understand these three, we need to understand the various options in `tsconfig.json`
+  and how they affect these three things.
+
+- The next lessons will explain the options in `tsconfig.json` that affect module resolution.

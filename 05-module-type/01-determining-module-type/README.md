@@ -12,6 +12,8 @@ Where is `import` and `require` used?
 
 - `require` is used in CommonJS files. We _can't_ use `require` in ESM files!
 
+---
+
 So if this file is a CommonJS file, this will fail:
 
 ```js
@@ -30,6 +32,8 @@ import {world} from './world.js'
 
 So the same file is treated differently if the file is ESM or CommonJS.
 
+---
+
 But _how_ does Node.js know whether the file is ESM or CommonJS?
 
 One answer could be - if we `import` a file, then we will treat it as ESM, and if we `require` it, we will
@@ -42,7 +46,7 @@ The answer is - by the file extension!
 - `.mjs`: the file is ESM
 - `.cjs`: the file is CommonJS
 
-So:
+---
 
 ```js
 // index.mjs
@@ -59,6 +63,8 @@ module.exports.world = 'world'
 ```
 
 This works! Because the file extensions tell Node.js which file is CommonJS and which is ESM.
+
+---
 
 But what about `.js`? `.js` by default is CommonJS, unless...
 
@@ -80,6 +86,8 @@ export const hello = 'hello'
 module.exports.world = 'world'
 ```
 
+---
+
 When Node.js encounters a `.js` file, it:
 
 1. Goes up the tree to the first `package.json` it encounters.
@@ -91,6 +99,8 @@ So in our example:
 
 - `commonjs/world.js` is CommonJS because it is in a folder with `package.json` with `type: commonjs`
 - `esm/hello.js` is ESM because a _parent_ folder has a `package.json` with `type: module`
+
+---
 
 ## Using `import` in CommonJS
 

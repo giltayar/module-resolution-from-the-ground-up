@@ -1,6 +1,6 @@
 # 06 Conditional Exports
 
-Reminder: the rules for determining the target files file type (i.e. CommonJS or ESM) are based on file extension:
+Reminder: the rules for determining the target file's file type (i.e. CommonJS or ESM) are based on file extension:
 
 - `.cjs` for CommonJS
 
@@ -15,6 +15,8 @@ Can we create an _ESM_ file that we can both `import` and `require`? No! Because
 does not allow `require`-ing ESM!
 
 Modules are unambiguous - they can't be both ESM and CommonJS!
+
+---
 
 Let's look at this package:
 
@@ -42,6 +44,8 @@ export const hello = 'hello'
 
 We can't create an ESM package that both works for ESM and CommonJS.
 
+---
+
 This creates a problem for library packages. If their code stays in CommonJS, it works for both ESM and CommonJS,
 but library authors don't want to stay in CommonJS, because that means that _they_ can't use ESM packages.
 
@@ -64,6 +68,11 @@ export const hello = 'hello, ESM'
 //     index.cjs
 module.exports.hello = 'hello, CommonJS'
 
+```
+
+---
+
+```js
 // node_modules/
 //   hello/
 //     package.json
@@ -83,6 +92,8 @@ and if they're using `require`, it should resolve to `./src/hello.cjs`.
 
 Custom conditions are evaluated from the first to the last - the first one who's condition is satisfied wins.
 
+---
+
 ## Other conditions
 
 There are other conditions, although those two are the most important:
@@ -101,6 +112,8 @@ We'll see that the community has adapted custom conditions for their use, and de
 - You can find all Node.js conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
 
 - You can find the more interesting community conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
+
+---
 
 ## Developing a dual-mode library
 

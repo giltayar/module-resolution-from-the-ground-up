@@ -9,7 +9,7 @@ export:
 ---
 layout: section
 ---
-# 02 Node.js "require" (CommonJS) Module Resolution
+# 04 Node.js "require" (CommonJS) Module Resolution
 
 ---
 src: ../04-nodejs-require-module-resolution/01-nodejs-require-relative-path/README.md

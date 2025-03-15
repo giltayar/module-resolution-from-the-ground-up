@@ -14,6 +14,8 @@
 
   - In CommonJS files, top-level await is not allowed
 
+---
+
 - To determine the module type, Node.js looks at the file extension:
 
   - If it's `.mjs`, it's an ESM file
@@ -27,6 +29,8 @@
     - If `type: commonjs` is set, it's a CommonJS file
 
     - If neither is set, it's a CommonJS file
+
+---
 
 ## Conditional exports
 
@@ -45,6 +49,6 @@
 
 - There are more conditions, some by Node.js, others by the community.
 
-- You can find all Node.js conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
+- You can find all Node.js conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json).
 
-- You can find the more interesting community conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
+- You can find the more interesting community conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json).

@@ -9,7 +9,7 @@ export:
 ---
 layout: section
 ---
-# 02 Node.js "import" (ESM) Module Resolution
+# 03 Node.js "import" (ESM) Module Resolution
 
 src: ../03-nodejs-import-module-resolution/01-nodejs-import-relative-path/README.md
 ---

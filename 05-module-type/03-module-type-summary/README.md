@@ -27,3 +27,24 @@
     - If `type: commonjs` is set, it's a CommonJS file
 
     - If neither is set, it's a CommonJS file
+
+## Conditional exports
+
+- An `exports` entry point in `package.json` can specify a "condition"
+
+- This means specifying different files based on what the import is.
+
+- Node.js conditions are:
+
+  - `import`: when the file is `import`-ed
+  - `require`: when the file is `require`-ed
+  - `default`: always true.
+
+- Conditions in the `exports` are evaluated from first to last, and the first
+  condition wins.
+
+- There are more conditions, some by Node.js, others by the community.
+
+- You can find all Node.js conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
+
+- You can find the more interesting community conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)

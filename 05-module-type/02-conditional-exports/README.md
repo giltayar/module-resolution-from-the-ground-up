@@ -94,8 +94,13 @@ There are other conditions, although those two are the most important:
 We'll see that the community has adapted custom conditions for their use, and defined:
 
 -`types`: the `.d.ts` file of the entry point, to define the TypeScritp types of that entrypoint
+
 - `browser`: the condition when you want a file that works in the browser (as opposed to the `node` condition
   which applies when the code is being used in Node.js).
+
+- You can find all Node.js conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
+
+- You can find the more interesting community conditions [here](05-module-type/01-determining-module-type-exercises/01/package.json)
 
 ## Developing a dual-mode library
 

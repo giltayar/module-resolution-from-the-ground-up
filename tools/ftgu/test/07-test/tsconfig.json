@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "None",
+    "outDir": "./dist",
+    "strict": true,
+    "noCheck": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}

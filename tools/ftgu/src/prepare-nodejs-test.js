@@ -24,6 +24,7 @@ export function prepareTest(exerciseDirectoryUrl, test) {
     console.log('"pnpm install" in', excersiseDirectoryRelative)
 
     await $$`pnpm install`
+    await $$`pnpm run --if-present build`
   })
 
   return {$: $$}

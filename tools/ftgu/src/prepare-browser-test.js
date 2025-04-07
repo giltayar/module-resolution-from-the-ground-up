@@ -26,6 +26,8 @@ export function prepareTest(exerciseDirectoryUrl, test, expect) {
     console.log('starting server in', excersiseDirectoryRelative)
 
     await Promise.all([$$`pnpm install`, killPort(3000).catch(() => 0)])
+    await $$`pnpm run --if-present build`
+
     void $$`pnpm start`
 
     await expect(() => fetch('http://localhost:3000')).toPass()

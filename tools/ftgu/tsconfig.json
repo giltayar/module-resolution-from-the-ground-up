@@ -20,5 +20,6 @@
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": ["src", "test"]
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "test/07-test", "test/08-test"]
 }

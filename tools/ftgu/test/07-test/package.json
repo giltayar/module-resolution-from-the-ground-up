@@ -1,9 +1,11 @@
 {
   "type": "module",
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "typescript": "^5.8.3"
   },
   "scripts": {
-    "start": "serve ."
+    "start": "serve .",
+    "build": "tsc"
   }
 }

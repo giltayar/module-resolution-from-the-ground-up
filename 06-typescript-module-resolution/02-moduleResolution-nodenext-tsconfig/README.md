@@ -12,21 +12,28 @@
 
 - Notice the import - `import {hello} from './hello.js'`. Why is it `./hello.js` and not `./hello.ts`?
 
-- Because TypeScript will _not_ touch the specifier when transpiling! This is a rule that TypeScript follows:
-  don't modify anything that is unrelated to types.
+- First, we need to understand that TypeScript transpiles
+  both `index.ts` and `hello.ts` to the `/dist` directory:
 
-- TypeScript TypeScript doesn't want to modify the code, only erase the types. And the import specifier is
-  not type-related, so it doesn't want to touch it. Makes sense? Yes. Weird? Yes!
+![](images/transpile.png)
 
-- This is how the transpilation proceeds.
+- The second thing we need to understand is that TypeScript does _not_ want to change anything in
+  the code that is not type-related, and the import specifier
+  (`import {hello} from '_import_specifier_'`) is not type-related so the final code in `dist`
+  must leave it untouched.
+
+- This means that to make the final code in `dist` work, the specifier must be `./hello.js`.
+
+![](images/transpile-destination-import.png)
+
+- This is how the transpilation proceeds. But this means
+  that the import specifier in `src` does _not_ point to the original `.ts` file, but rather
+  to where the original `.ts` file will be transpiled to!
+
+- So TypeScript has to "reverse engineer" the intent of the specifier
+  and "figure out" what the original source code is!
 
 ![](images/import-transpile.png)
-
-- So if TypeScript is not "allowed" to touch the specifier,
-  then the import in `index.js` MUST work, and thus MUST be `./hello.js`.
-
-- But there is _no_ `hello.js` file in the directory! Only `hello.ts`.
-  So how does this work?
 
 - TypeScript _reverse engineers_ (or inverse maps) the `hello.js` to `hello.ts`
   because it understands that the file `./hello.js` is what the `hello.ts` will

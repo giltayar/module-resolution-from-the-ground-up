@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "preserve",
     "outDir": "./dist",
     "strict": true
   }

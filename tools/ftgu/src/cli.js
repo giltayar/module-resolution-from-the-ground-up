@@ -10,9 +10,9 @@ await yargs(hideBin(process.argv))
     'test',
     'Run a test',
     () => {},
-    async (argv) => {
-      const dir = testDirectory(pathToFileURL(process.cwd()))
-      const $$ = $({cwd: dir})
+    async () => {
+      const {dir, env} = testDirectory(pathToFileURL(process.cwd()))
+      const $$ = $({cwd: dir, env})
 
       await $$`pnpm install`
       await $$`pnpm run --if-present build`
@@ -35,5 +35,7 @@ function testDirectory(currentDir) {
   const dirnameBase = dirname.replace(/\-.*$/, '')
   const testDir = dirnameBase + '-test'
 
-  return new URL(testDir, currentDir)
+  const env = dirname.includes('-solution') ? {SOLUTION: dirname.replace(/[0-9]+\-/, '')} : {}
+
+  return {dir: new URL(testDir, currentDir), env}
 }

@@ -5,18 +5,18 @@ import {$} from 'execa'
 test('test cli in exercise dir', async () => {
   const {stdout} = await $({cwd: 'test/08'})`node ../../src/cli.js test`
 
-  expect(stdout).toContain('dummy test run')
+  expect(stdout).toContain('dummy test run:')
 })
 
 test('test cli in solution dir', async () => {
-  const {stdout} = await $({cwd: 'test/08-solution'})`node ../../src/cli.js test`
+  const {stdout} = await $({cwd: 'test/08-solution-1'})`node ../../src/cli.js test`
 
-  expect(stdout).toContain('dummy test run')
+  expect(stdout).toContain('dummy test run: solution-1')
 })
 
 test('test help', async () => {
   const {stderr, failed} = await $({
-    cwd: 'test/08-solution',
+    cwd: 'test/08-solution-1',
     reject: false,
   })`node ../../src/cli.js zest`
 

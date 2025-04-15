@@ -1,7 +1,7 @@
 {
   "name": "@giltayar/ftgu",
   "private": false,
-  "version": "2.2.0",
+  "version": "2.2.1",
   "type": "module",
   "bin": {
     "ftgu": "./src/cli.js"

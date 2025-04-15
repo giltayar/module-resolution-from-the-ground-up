@@ -6,6 +6,6 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "tsc",
-    "test": "echo dummy test run"
+    "test": "echo dummy test run: $SOLUTION"
   }
 }

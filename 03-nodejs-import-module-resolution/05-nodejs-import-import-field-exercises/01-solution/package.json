@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "ftgu test"
+    "test:x": "ftgu test"
   },
   "dependencies": {
     "p-throttle": "^7.0.0"

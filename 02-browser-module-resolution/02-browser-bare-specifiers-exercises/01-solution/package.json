@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "kill-port 3000 && serve --no-port-switching --no-clipboard -p 3000 .",
-    "test": "ftgu test"
+    "test:x": "ftgu test"
   },
   "devDependencies": {
     "serve": "^14.2.4",

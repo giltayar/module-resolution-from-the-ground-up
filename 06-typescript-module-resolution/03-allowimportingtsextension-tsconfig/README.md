@@ -9,6 +9,7 @@
 - In our case, we want to import from the module `hello.ts`, so we write
 
 ```js
+// index.ts
 import {hello} from './hello.js'
 ```
 
@@ -19,18 +20,20 @@ import {hello} from './hello.js'
 
 - But it does _not_ make sense when we're not transpiling, but running the TypeScript code directly.
 
-- This happens in the new backend JavaScript runtimes, i.e. Deno and Bun, but also using the new Node.js ability
-  to run TypeScript directly.
+- This happens in the new backend JavaScript runtimes, i.e. Deno, Bun, and the newer Node.js versions
+  (from version 20 onward).
 
 - In this case, the runtime passes the source code to TypeScript to transpile, but wants the final import to be:
 
 ```js
+// index.ts
 import {hello} from './hello.ts'
 ```
 
-- So that module resolution is needed.
+- So that the runtime can use it's module resolution to find the `.ts` file
+  (as we explained in section 03 ("Nodejs import module resolution"), lesson 06 ("TypeScript support")).
 
-- To support this case, TypeScript added `allowImportingTsExtensions: true` in TSConfig.
+- To support this use case, TypeScript added `allowImportingTsExtensions: true` in TSConfig.
 
 - Note that this option does not mean that TypeScript will rewrite the extension to `.js`. It still won't!
 
@@ -44,5 +47,5 @@ import {hello} from './hello.ts'
   - When? For example, a library that runs tests with the Node.js TypeScript support, without transpilation,
     and yet still wants to redistribute the JS files.
 
-- The `rewriteRelativeImportExtensions` TSCibfug option  _does_ rewrite the specifier, but only
+- The `rewriteRelativeImportExtensions` TSConfig option  _does_ rewrite the specifier, but only
   for relative specifiers.

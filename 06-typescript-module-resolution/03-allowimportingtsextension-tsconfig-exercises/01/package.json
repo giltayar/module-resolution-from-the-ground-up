@@ -1,0 +1,12 @@
+{
+  "type": "commonjs",
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "test:x": "ftgu test",
+    "test": "tsc --noEmit",
+    "start": "node --no-warnings --experimental-strip-types ./index.mts"
+  }
+}

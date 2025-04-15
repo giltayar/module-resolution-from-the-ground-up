@@ -4,8 +4,6 @@
     "module": "NodeNext",
     "outDir": "./dist",
     "strict": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    //"rewriteRelativeImportExtensions": true
+    "allowImportingTsExtensions": true
   }
 }

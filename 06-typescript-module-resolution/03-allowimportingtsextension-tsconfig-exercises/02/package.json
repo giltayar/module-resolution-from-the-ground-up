@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "test:x": "ftgu test",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  }
+}

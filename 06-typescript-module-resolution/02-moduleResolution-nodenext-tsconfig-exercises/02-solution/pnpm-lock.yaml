@@ -11,6 +11,9 @@ importers:
       '@giltayar/ftgu':
         specifier: ^2.2.1
         version: 2.2.1
+      kill-port:
+        specifier: ^2.0.1
+        version: 2.0.1
       serve:
         specifier: ^14.2.4
         version: 14.2.4

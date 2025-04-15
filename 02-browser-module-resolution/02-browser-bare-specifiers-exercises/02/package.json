@@ -1,12 +1,13 @@
 {
   "type": "module",
   "scripts": {
-    "start": "serve .",
+    "start": "kill-port 3000 && serve --no-port-switching -p 3000 .",
     "test": "ftgu test"
   },
   "devDependencies": {
     "@giltayar/ftgu": "^2.2.1",
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "kill-port": "^2.0.1"
   },
   "dependencies": {
     "ftgu-browser-throttled-show": "^1.0.1",

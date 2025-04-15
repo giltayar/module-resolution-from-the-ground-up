@@ -1,9 +1,10 @@
 {
   "type": "module",
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "kill-port": "^2.0.1"
   },
   "scripts": {
-    "start": "serve ."
+    "start": "kill-port 3000 && serve --no-port-switching -p 3000 ."
   }
 }

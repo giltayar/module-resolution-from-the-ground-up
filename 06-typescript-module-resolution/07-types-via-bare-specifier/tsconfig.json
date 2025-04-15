@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "preserve",
+    "module": "NodeNext",
     "moduleResolution": "nodenext",
     "outDir": "./dist",
     "strict": true

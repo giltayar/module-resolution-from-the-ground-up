@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "moduleResolution": "nodenext",
-    "module": "NodeNext",
+    "module": "preserve",
     "outDir": "./dist",
     "strict": true,
     "allowImportingTsExtensions": true

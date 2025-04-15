@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node --experimental-strip-types ./index.ts"
+  },
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  }
+}

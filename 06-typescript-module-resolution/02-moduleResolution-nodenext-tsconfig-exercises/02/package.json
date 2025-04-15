@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1",
+    "serve": "^14.2.4",
+    "typescript": "^5.8.3",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "start": "serve .",
+    "build": "tsc",
+    "test": "ftgu test"
+  }
+}

@@ -2,6 +2,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "cd ../01-test && pnpm test"
+    "test": "ftgu test"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1"
   }
 }

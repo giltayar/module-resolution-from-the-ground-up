@@ -6,9 +6,12 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "cd ../01-test && pnpm test"
+    "test": "ftgu test"
   },
   "dependencies": {
     "p-throttle": "^7.0.0"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1"
   }
 }

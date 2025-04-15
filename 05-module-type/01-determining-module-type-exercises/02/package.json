@@ -1,6 +1,9 @@
 {
   "scripts": {
     "start": "node index.mjs",
-    "test": "cd ../01-test && pnpm test"
+    "test": "ftgu test"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1"
   }
 }

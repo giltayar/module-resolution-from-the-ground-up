@@ -1,5 +1,9 @@
 {
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "ftgu test"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.2.1"
   }
 }

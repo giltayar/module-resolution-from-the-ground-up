@@ -1,10 +1,11 @@
 {
   "type": "module",
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "@giltayar/ftgu": "^2.2.1"
   },
   "scripts": {
     "start": "serve .",
-    "test": "cd ../01-test && pnpm test"
+    "test": "ftgu test"
   }
 }

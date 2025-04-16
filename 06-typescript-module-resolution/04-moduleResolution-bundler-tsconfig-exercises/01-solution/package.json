@@ -7,6 +7,6 @@
   "scripts": {
     "test:x": "ftgu test",
     "build": "tsc && mv dist/hello.js dist/hello",
-    "start": "node dist/index.js || echo 'bundler' does not work"
+    "start": "node dist/index.js"
   }
 }

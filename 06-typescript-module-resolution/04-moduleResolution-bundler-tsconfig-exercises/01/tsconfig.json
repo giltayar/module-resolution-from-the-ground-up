@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "moduleResolution": "bundler",
-    "module": "preserve",
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
     "outDir": "./dist",
     "strict": true
   }

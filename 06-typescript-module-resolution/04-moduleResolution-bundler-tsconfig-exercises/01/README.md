@@ -1,69 +1,46 @@
-## 04 The `moduleResolution: bundler` Option in `tsconfig.json`
+# Exercise #1
 
-- The `bundler` module resolution algorithm is the Node.js CommonJS module resolution, but also implemented
-  for ESM modules.
+The directory has a CLI written in TypeScript that outputs the string "Hello, world".
 
-Let's look at `index.ts`:
+The code is written in TypeScript so it needs transpiling.
 
-```ts
-// index.ts
-import {hello} from './hello'
+1. Run `pnpm install` to start
 
-console.log(hello)
-```
+1. Run `pnpm run build` to transpile the `.ts` files
 
-- Notice that the import specifier `./hello` does not specify the extension, and yet this is an ESM module!
+1. Run the transpiled code via `node dist/index.js`.
 
-- If we try to run it with the Node.js TypeScript support, it won't run, because the Node.js module resolution
-  algorith won't find the module `./hello`.
+1. It fails.
 
-- The `bundler` module resolution algorithm works just like the CommonJS one, but it also works in ESM files! This
-  means that extensionless import specifiers are allowed, and TypeScript will search for the correct file
-  (e.g. `.ts`, `.mts`, `.cts`, `.json`, `.js`, etc).
+1. Fix it by only touching configuration files!
 
-- Let's run `pnpm run build` and see what the resultant `index.js` is
+---
 
-```js
-// dist/index.js
+Hint:
 
-import {hello} from './hello'
+- The import to `./hello` fails.
 
-console.log(hello)
-```
+- What is the `moduleResolution`? Look in the `tsconfig.json`.
 
-- The import specifier still has no extension, so if we run it...
+- `moduleResolution: nodeNext` does not support extensionless imports that try and "guess" the extension to be `.js`.
 
-```sh
-$ node dist/index.js
-...
-Error [ERR_MODULE_NOT_FOUND]: Cannot find module '.../dist/hello' imported from .../dist/index.js
-```
+- But `moduleResolution: bundler` does support it.
 
-- It will fail and say that it cannot find the module `hello`.
+- When you change the `moduleResolution` to `bundler` another error pops up. Can you fix it?
 
-- So if the option `bundler` generates output that doesn't work in Node.js
-  and also (for the same reason) doesn't work in the browser,
-  why is the option there at all?
+- Fix it by changing the `module` to whatever it says there.
 
-- Historically, the `bundler` module resolution came before TypeScript. It was used by Babel and WebPack,
-  before Node.js supported ESM and before browsers supported ESM.
+- Run the build again. It should work.
 
-  - All we had was CommonJS, so that when transpilers like Babel transpiled the `import` statement,
-    they had to transpile it to `require`,
-    and thus it made sense to use the CommonJS module resolution algorithm.
+- Running the code fails.
 
-  - Nobody thought that when Node.js and browsers decided to suport ESM, they would decide not to support
-    extensionless import specifiers.
+- What does the error say?
 
-- This means that a lot of code out there is using this module resolution. Source code that uses
-  this extensionless module specifiers is called "Faux ESM" or "False ESM", because it looks like ESM,
-  yet Node.js and the browser do not really support it.
+- It says the `dist/index.js` cannot find `dist/hello`.
 
-- Because developers were used to not providing the extension, most code today _still_ uses extensionless
-  import specifiers, even when Node.js and browsers don't support it.
+- True, given that TypeScript transpiled `hello.ts` to `dist/hello.js`.
 
-- This is especially true for most frontend code, as bundlers anyway supported it.
+- We can rename the file after the build using the Unix command `mv`.
 
-- Please do not use this option in new projects, as it will generate code that bundlers can use,
-  but Node.js can't, and these days, a lot of our code can now run both in the browser and in Node.js, and
-  not using this option, but rather using the regular "nodenext" will save you a lot of configuration pain.
+- Put the correct command that renames `dist/hello.js` to `dist/hello`
+  inside the `build` script in the `package.json`.

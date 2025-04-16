@@ -1,0 +1,4 @@
+!node_modules
+node_modules/*
+!node_modules/rotate-string/
+!node_modules/rotate-string/**

@@ -31,7 +31,7 @@ import {hello} from './hello.ts'
 ```
 
 - So that the runtime can use it's module resolution to find the `.ts` file
-  (as we explained in section 03 ("Nodejs import module resolution"), lesson 06 ("TypeScript support")).
+  (as we explained in chapter 03 ("Nodejs import module resolution"), lesson 06 ("TypeScript support")).
 
 - To support this use case, TypeScript added `allowImportingTsExtensions: true` in TSConfig.
 

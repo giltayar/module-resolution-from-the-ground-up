@@ -48,7 +48,7 @@ Hint:
 
 - Let's try and remember from Node's resolution algorithm why it thinks it is CommonJS.
 
-- Hint: See lesson 01 ("Determining module type") in section 05 ("Module type")
+- Hint: See lesson 01 ("Determining module type") in chapter 05 ("Module type")
 
 - If the extension is `.js` then it is CommonJS unless there is a `type: "module"` in the `package.json`.
 

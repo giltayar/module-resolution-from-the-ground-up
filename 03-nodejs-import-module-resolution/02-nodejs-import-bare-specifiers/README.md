@@ -69,5 +69,5 @@ The `import 'p-throttle'` in `<some-dir>/subdir/some-file.js` still
 resolves to `<some-dir>/node_modules/p-throttle/index.js` because Node.js continues up the directory tree
 till it finds `node_modules` with the package directory inside it.
 
-We've seen what it does with `index.js` in the package. In the next sections, we'll see what it does with the
+We've seen what it does with `index.js` in the package. In the next chapters, we'll see what it does with the
 `package.json`.

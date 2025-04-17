@@ -56,7 +56,7 @@ index.ts:1:28 - error TS7016: Could not find a declaration file for module 'hell
 
 - An alternative is to use the `types` condition.
   When resolving the _module_ of a bare specifier, TypeScript uses the regular `import` or `require` condition
-  as we saw in section 05 ("module type") lesson 02 ("conditional exports").
+  as we saw in chapter 05 ("module type") lesson 02 ("conditional exports").
 
 - When resolving The _`.d.ts`_ of a bare specifier, TypeScript resolves it using the `types` condition:
 

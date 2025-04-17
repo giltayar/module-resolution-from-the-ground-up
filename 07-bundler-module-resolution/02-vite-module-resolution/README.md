@@ -21,7 +21,7 @@
   option was added _because_ it was used in bundlers.
 
 - The `bundler` module resolution is an interesting one - it enables you write "Faux ESM", as we described
-  in the "TypeScript" section. Why did we call it "False ESM"?
+  in the "TypeScript" chapter. Why did we call it "False ESM"?
   Because the ESM you write can't run natively in the browser or in Node.js,
   and can only be used via bundling or transpiling.
 

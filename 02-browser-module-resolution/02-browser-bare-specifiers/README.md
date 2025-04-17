@@ -1,7 +1,7 @@
 # 02 How do "bare" specifiers work in the browser?
 
 Reminder: module resolution is how we interpret the "specifier" in `import {something} from '*specifier*'`.
-This section deals with how this interpretation works in the browser.
+This chapter deals with how this interpretation works in the browser.
 
 We saw that browsers support `import` statements, if the `<script src>` tag also includes a `type="module"` attribute.
 

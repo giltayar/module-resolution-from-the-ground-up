@@ -5,6 +5,7 @@
 - This module resolution supports code like this:
 
 ```html
+<!-- index.html -->
     <script type="module">
       import {show} from './show'
 
@@ -12,10 +13,26 @@
     </script>
 ```
 
-- This module resolution will "guess" the extension `.js` and resolve to `show.js`.
+- This module resolution will "guess" the extension needed.
+   In our case, it doesn't find `show.js`, but rather `show.ts`:
+
+```ts
+// show.ts
+export function show(message: string) {
+  document.getElementById('root').innerHTML += message + '<br>';
+}
+```
+
+- Note that the bundler will transpile `show.ts` to JavaScript, even though we haven't installed TypeScript
+  in the directory.
+
+  - Also note that `show.ts` includes errors (`document.getElementById(..)` might be `null`), but Vite
+    ignores them.
+
+  - This is because Vite _strips the types_, but does not do type checking.
 
 - The `bundler` module resolution algorithm is basically the Node.js CommonJS module resolution, but used also
-  when the module is `imported` and ESM.
+  when the module is `imported` and ESM. It also adds the ability to deal correctly with TypeScript files.
 
 - We've already seen this module resolution algorithm in TypeScript. Actually, the `moduleResolution: bundler`
   option was added _because_ it was used in bundlers.

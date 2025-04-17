@@ -1,4 +1,3 @@
-import {show} from './show'
 import throttle from 'p-throttle'
 
 const throttledShow = throttle({interval: 500, limit: 1})(show)

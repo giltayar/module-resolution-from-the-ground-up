@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "test:x": "ftgu test",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.3.0"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "@giltayar/ftgu",
   "private": false,
-  "version": "2.2.1",
+  "version": "2.3.0",
   "type": "module",
   "bin": {
     "ftgu": "./src/cli.js"
@@ -19,20 +19,21 @@
   "scripts": {
     "build": "tsc",
     "test": "playwright test",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepublishOnly": "pnpm run build && pnpm test --retries 1"
   },
   "dependencies": {
+    "@giltayar/ftgu": "link:",
     "execa": "^9.5.2",
     "kill-port": "^2.0.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.52.0",
     "@types/kill-port": "^2.0.3",
-    "@types/node": "^22.10.7",
+    "@types/node": "^22.14.1",
     "@types/yargs": "^17.0.33",
     "serve": "^14.2.4",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   },
   "files": [
     "dist",

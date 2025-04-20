@@ -31,7 +31,7 @@ export function prepareTest(exerciseDirectoryUrl, test, expect) {
     void $$`pnpm start`
 
     await expect(() => fetch('http://localhost:3000')).toPass()
-
-    return {$: $$}
   })
+
+  return {$: $$}
 }

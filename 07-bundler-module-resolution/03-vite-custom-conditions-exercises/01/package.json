@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "dependencies": {
+    "p-throttle": "^7.0.0"
+  },
+  "scripts": {
+    "test:x": "ftgu test",
+    "build": "vite build .",
+    "start": "kill-port 3000 && serve --no-port-switching --no-clipboard -p 3000 dist"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.3.0",
+    "kill-port": "^2.0.1",
+    "serve": "^14.2.4",
+    "vite": "^6.3.1"
+  }
+}

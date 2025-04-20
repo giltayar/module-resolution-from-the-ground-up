@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@giltayar/ftgu": "^2.3.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1"
+  }
+}

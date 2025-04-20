@@ -1,10 +1,10 @@
 {
   "name": "ftgu-log-hello-world-chinese",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "exports": "./log-hello-world.js",
   "dependencies": {
-    "ftgu-hello-world": "1.1.0"
+    "ftgu-hello-world": "^1.1.0"
   },
   "pnpm": {
     "updateConfig": {

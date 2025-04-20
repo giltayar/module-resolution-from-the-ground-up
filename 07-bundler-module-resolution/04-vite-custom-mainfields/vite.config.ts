@@ -8,6 +8,6 @@ export default defineConfig({
     minify: false,
   },
   resolve: {
-    // conditions: ['source'],
+    mainFields: ['browser:next'],
   }
 })

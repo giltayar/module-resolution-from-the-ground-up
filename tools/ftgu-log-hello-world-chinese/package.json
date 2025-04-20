@@ -1,0 +1,27 @@
+{
+  "name": "ftgu-log-hello-world-chinese",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": "./log-hello-world.js",
+  "dependencies": {
+    "ftgu-hello-world": "1.1.0"
+  },
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "ftgu-hello-world"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "playwright test",
+    "prepublishOnly": "pnpm test"
+  },
+  "devDependencies": {
+    "execa": "^9.5.2",
+    "playwright": "^1.52.0"
+  },
+  "files": [
+    "log-hello-world.js"
+  ]
+}

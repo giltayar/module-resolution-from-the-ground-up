@@ -1,0 +1,28 @@
+{
+  "name": "ftgu-show-hello-world",
+  "version": "1.0.1",
+  "type": "module",
+  "exports": "./show-hello-world.js",
+  "dependencies": {
+    "figlet": "^1.8.1",
+    "ftgu-hello-world": "2.0.0"
+  },
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "ftgu-hello-world"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "playwright test",
+    "prepublishOnly": "pnpm test"
+  },
+  "devDependencies": {
+    "execa": "^9.5.2",
+    "playwright": "^1.52.0"
+  },
+  "files": [
+    "show-hello-world.js"
+  ]
+}

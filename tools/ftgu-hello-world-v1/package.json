@@ -1,0 +1,16 @@
+{
+  "name": "ftgu-hello-world",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": "./hello-world.js",
+  "devDependencies": {
+    "execa": "^9.5.2",
+    "playwright": "^1.52.0"
+  },
+  "scripts": {
+    "test": "playwright test"
+  },
+  "files": [
+    "hello-world.*"
+  ]
+}

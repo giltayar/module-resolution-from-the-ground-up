@@ -1,4 +1,4 @@
-## 03 How does Node.js use `package.json`'s `main`?
+## 04 How does Node.js use `package.json`'s `main`?
 
 Reminder: when importing a "bare specifier" (package), Node.js looks in the `node_module` folder for a package
 that has the same name and uses the `index.js` file in it as the entry point.

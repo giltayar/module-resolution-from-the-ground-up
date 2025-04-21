@@ -1,4 +1,4 @@
-# 06 Conditional Exports
+# 02 Conditional Exports
 
 Reminder: the rules for determining the target file's file type (i.e. CommonJS or ESM) are based on file extension:
 

@@ -1,4 +1,4 @@
-## The `module` option `tsconfig.json`
+## 05 The `module` option `tsconfig.json`
 
 - We've seen a lot of lessons on the `moduleResolution` option in `tsconfig.json`.
 

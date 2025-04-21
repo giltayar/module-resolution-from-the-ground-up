@@ -1,4 +1,4 @@
-# Wildcards in exports
+# 06 Wildcards in exports
 
 - Let's look at a package that wants to exports lots of entry points:
 

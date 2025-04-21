@@ -1,4 +1,4 @@
-# Module Type Summary
+# 03 Module type summary
 
 - There's a large algorithm that determines how to resolve the specifier in an `import` or a `require`.
 

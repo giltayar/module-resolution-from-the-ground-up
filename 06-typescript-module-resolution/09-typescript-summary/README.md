@@ -1,4 +1,4 @@
-# TypeScript Summary
+# 09 TypeScript summary
 
 - TypeScript module resolution is configurable via the `moduleResolution` field in `tsconfig.json`
 

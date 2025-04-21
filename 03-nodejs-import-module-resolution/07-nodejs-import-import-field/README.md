@@ -1,4 +1,4 @@
-# The Node.js "import" field
+# 07 The Node.js "import" field
 
 Reminder: when you import a package, Node.js finds a package directory in the `node_modules`,
 looks at its `package.json` to find the `exports` field that defines the entry points to the package.

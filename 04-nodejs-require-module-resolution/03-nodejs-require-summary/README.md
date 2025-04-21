@@ -1,4 +1,4 @@
-# Node.js `require` Module Resolution Summary
+# 03 Node.js `require` module resolution summary
 
 ## Module resolution for relative specifiers
 

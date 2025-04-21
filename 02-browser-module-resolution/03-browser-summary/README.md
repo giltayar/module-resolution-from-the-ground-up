@@ -1,4 +1,4 @@
-# Browser Module Resolution Summary
+# 03 Browser module resolution summary
 
 - Browsers support `import` (ESM only). CommonJS is not supported.
 

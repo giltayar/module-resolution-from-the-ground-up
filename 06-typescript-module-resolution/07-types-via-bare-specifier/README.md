@@ -1,4 +1,4 @@
-# Finding the types in bare specifiers
+# 07 Finding the types in bare specifiers
 
 - In the previous lesson we saw that TypeScript doesn't need a `.ts` to get the type information.
   It can use an accompanying `.d.ts` file to understand the type information of the `.js` file:

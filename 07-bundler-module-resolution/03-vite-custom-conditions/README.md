@@ -1,4 +1,4 @@
-# Custom Conditions
+# 03 Custom Conditions
 
 - Just like in TypeScript, as we learned in chapter 06 ("Typescript module resolution")
   lesson 08 ("custom conditions") you can specify additional conditions besides the regular `import` and `require`.

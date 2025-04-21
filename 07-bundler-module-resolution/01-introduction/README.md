@@ -1,4 +1,4 @@
-# 01 Introduction to Bundlers
+# 01 Introduction to bundlers
 
 - Browsers know how to deal with JavaScript imports. Thus, the following code works in the browser:
 

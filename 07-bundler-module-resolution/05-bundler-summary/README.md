@@ -1,4 +1,4 @@
-# Bundler Summary
+# 05 Bundler summary
 
 - Bundlers like Vite use the `bundler` module resolution algorithm that we saw can be defined for TypeScript.
 

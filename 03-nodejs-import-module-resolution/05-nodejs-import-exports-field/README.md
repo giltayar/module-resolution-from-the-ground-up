@@ -1,4 +1,4 @@
-## 04 How Node.js supports multiple entry points with `exports`
+## 05 How Node.js supports multiple entry points with `exports`
 
 Reminder: Node.js uses the `main` field in the `package.json` of a package to figure out the entry point
 

@@ -1,4 +1,4 @@
-# 01 Vite Module Resolution
+# 02 Vite module resolution
 
 - Vite and other bundlers use a module resolution that we already saw that TypeScript supports - `bundler`.
 

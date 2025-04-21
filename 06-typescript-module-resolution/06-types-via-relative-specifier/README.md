@@ -1,4 +1,4 @@
-# Finding the types in relative specifiers
+# 06 Finding the types in relative specifiers
 
 - TypeScript needs module resolution not only for the `.js` file, but also for types, i.e. for `.d.ts` files.
 

@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test'
-import {centerString} from 'zcenter-string'
+import {centerString} from 'center-string'
 
 test('should center a string within specified width', () => {
   expect(centerString('hello', 15)).toBe('     hello     ')

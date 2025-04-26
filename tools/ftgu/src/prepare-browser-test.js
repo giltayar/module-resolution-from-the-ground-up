@@ -12,7 +12,7 @@ export {exerciseDirectory} from './exercise-directory.js'
  * @param {import('@playwright/test').Expect} expect
  */
 export function prepareTest(exerciseDirectoryUrl, test, expect) {
-  const $$ = $({cwd: exerciseDirectoryUrl})
+  const $$ = $({cwd: exerciseDirectoryUrl, verbose: 'short'})
   const exerciseDirectory = fileURLToPath(
     typeof exerciseDirectoryUrl === 'string' ? exerciseDirectoryUrl : exerciseDirectoryUrl
   )

@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@giltayar/ftgu':
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.5.0
+        version: 2.5.0
       kill-port:
         specifier: ^2.0.1
         version: 2.0.1
@@ -20,8 +20,8 @@ importers:
 
 packages:
 
-  '@giltayar/ftgu@2.3.0':
-    resolution: {integrity: sha512-75oO0HyH4eqD5APUNQg+y/BDtewe+avLRDbBbnVp5wdnwTph+7s8IUPQb4UdLQ12L/z8kTsX4c9RyDXhB8E+zg==}
+  '@giltayar/ftgu@2.5.0':
+    resolution: {integrity: sha512-aomEER5zkKuLYYrNdGK3BmsWtJO9A62ISYqhCrffM8uTgSsjmVwDiBoiFHaRrqGkoi3wkxbKbOxm19yCbblBmw==}
     hasBin: true
 
   '@sec-ant/readable-stream@0.4.1':
@@ -469,8 +469,9 @@ packages:
 
 snapshots:
 
-  '@giltayar/ftgu@2.3.0':
+  '@giltayar/ftgu@2.5.0':
     dependencies:
+      '@giltayar/ftgu': 'link:'
       execa: 9.5.2
       kill-port: 2.0.1
       yargs: 17.7.2

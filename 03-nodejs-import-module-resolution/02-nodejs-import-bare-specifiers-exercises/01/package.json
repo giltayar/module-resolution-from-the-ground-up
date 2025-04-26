@@ -5,6 +5,6 @@
     "test:x": "ftgu test"
   },
   "devDependencies": {
-    "@giltayar/ftgu": "^2.3.0"
+    "@giltayar/ftgu": "^2.5.0"
   }
 }

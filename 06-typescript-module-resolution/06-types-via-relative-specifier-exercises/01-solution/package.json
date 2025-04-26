@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@giltayar/ftgu": "^2.3.0",
+    "@giltayar/ftgu": "^2.5.0",
     "typescript": "^5.8.3"
   },
   "scripts": {

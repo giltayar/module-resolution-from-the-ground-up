@@ -4,7 +4,7 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@giltayar/ftgu": "^2.3.0",
+    "@giltayar/ftgu": "^2.5.0",
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.2"
   }

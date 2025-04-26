@@ -14,14 +14,14 @@ export function prepareTest(exerciseDirectoryUrl, test) {
   const exerciseDirectory = fileURLToPath(
     typeof exerciseDirectoryUrl === 'string' ? exerciseDirectoryUrl : exerciseDirectoryUrl
   )
-  const excersiseDirectoryRelative = relative(process.cwd(), exerciseDirectory)
+  const excerciseDirectoryRelative = relative(process.cwd(), exerciseDirectory)
 
   if (!fs.existsSync(exerciseDirectory)) {
-    throw new Error(`exercise directory ${excersiseDirectoryRelative} does not exist`)
+    throw new Error(`exercise directory ${excerciseDirectoryRelative} does not exist`)
   }
 
   test.beforeAll(async () => {
-    console.log('"pnpm install" in', excersiseDirectoryRelative)
+    console.log('Running tests of', excerciseDirectoryRelative)
 
     await $$`pnpm install`
     await $$`pnpm run --if-present build`

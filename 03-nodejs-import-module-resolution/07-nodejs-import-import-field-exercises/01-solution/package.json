@@ -2,7 +2,8 @@
   "type": "module",
   "imports": {
     "#hello": "./words/hello.js",
-    "#world": "./words/world.js"
+    "#world": "./words/world.js",
+    "#throttle": "p-throttle"
   },
   "scripts": {
     "start": "node index.js",

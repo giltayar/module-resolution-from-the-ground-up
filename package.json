@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "update-lessons": "pnpm --recursive update",
+    "test-solutions": "pnpm --recursive --workspace-concurrency 1 --filter './**/*-solution' test:x"
+  },
   "pnpm": {
     "updateConfig": {
       "ignoreDependencies": [

@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@giltayar/ftgu':
-        specifier: ^2.2.1
-        version: 2.2.1
+        specifier: ^2.3.0
+        version: 2.3.0
       typescript:
-        specifier: ^5.7.3
-        version: 5.7.3
+        specifier: ^5.8.3
+        version: 5.8.3
 
 packages:
 
-  '@giltayar/ftgu@2.2.1':
-    resolution: {integrity: sha512-JWmRJyawni4NZz+3l446rmwLBg4AjHmZjObI+oPSo5LMg37ZJM5F5k8aIWoPBRnAn9cQ71glLSMyO8QETYz89A==}
+  '@giltayar/ftgu@2.3.0':
+    resolution: {integrity: sha512-75oO0HyH4eqD5APUNQg+y/BDtewe+avLRDbBbnVp5wdnwTph+7s8IUPQb4UdLQ12L/z8kTsX4c9RyDXhB8E+zg==}
     hasBin: true
 
   '@sec-ant/readable-stream@0.4.1':
@@ -155,8 +155,8 @@ packages:
     resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
     engines: {node: '>=18'}
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -191,7 +191,7 @@ packages:
 
 snapshots:
 
-  '@giltayar/ftgu@2.2.1':
+  '@giltayar/ftgu@2.3.0':
     dependencies:
       execa: 9.5.2
       kill-port: 2.0.1
@@ -313,7 +313,7 @@ snapshots:
 
   strip-final-newline@4.0.0: {}
 
-  typescript@5.7.3: {}
+  typescript@5.8.3: {}
 
   unicorn-magic@0.3.0: {}
 

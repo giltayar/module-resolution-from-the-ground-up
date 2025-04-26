@@ -10,7 +10,7 @@
     "start:kitchen": "node --conditions=kitchen ./dist/index.js"
   },
   "devDependencies": {
-    "@giltayar/ftgu": "^2.2.1",
+    "@giltayar/ftgu": "^2.3.0",
     "typescript": "^5.8.3"
   }
 }

@@ -9,6 +9,6 @@
     "p-throttle": "^7.0.0"
   },
   "devDependencies": {
-    "@giltayar/ftgu": "^2.2.1"
+    "@giltayar/ftgu": "^2.3.0"
   }
 }

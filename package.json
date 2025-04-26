@@ -1,0 +1,9 @@
+{
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "ftgu-hello-world"
+      ]
+    }
+  }
+}

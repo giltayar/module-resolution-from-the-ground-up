@@ -1,10 +1,10 @@
 {
   "devDependencies": {
-    "@giltayar/ftgu": "^2.2.1",
+    "@giltayar/ftgu": "^2.3.0",
+    "kill-port": "^2.0.1",
     "serve": "^14.2.4",
     "typescript": "^5.8.3",
-    "yargs": "^17.7.2",
-    "kill-port": "^2.0.1"
+    "yargs": "^17.7.2"
   },
   "scripts": {
     "start": "kill-port 3000 && serve --no-port-switching --no-clipboard -p 3000 .",

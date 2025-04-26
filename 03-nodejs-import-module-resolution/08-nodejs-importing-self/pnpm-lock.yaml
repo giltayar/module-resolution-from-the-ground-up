@@ -8,11 +8,19 @@ importers:
 
   .:
     devDependencies:
+      '@playwright/test':
+        specifier: ^1.52.0
+        version: 1.52.0
       playwright:
         specifier: ^1.52.0
         version: 1.52.0
 
 packages:
+
+  '@playwright/test@1.52.0':
+    resolution: {integrity: sha512-uh6W7sb55hl7D6vsAeA+V2p5JnlAqzhqFyF0VcJkKZXkgnFcVG9PziERRHQfPLfNGx1C292a4JqbWzhR8L4R1g==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   fsevents@2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
@@ -30,6 +38,10 @@ packages:
     hasBin: true
 
 snapshots:
+
+  '@playwright/test@1.52.0':
+    dependencies:
+      playwright: 1.52.0
 
   fsevents@2.3.2:
     optional: true

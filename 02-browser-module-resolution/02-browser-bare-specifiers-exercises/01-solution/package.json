@@ -5,9 +5,9 @@
     "test:x": "ftgu test"
   },
   "devDependencies": {
-    "serve": "^14.2.4",
-    "@giltayar/ftgu": "^2.2.1",
-    "kill-port": "^2.0.1"
+    "@giltayar/ftgu": "^2.3.0",
+    "kill-port": "^2.0.1",
+    "serve": "^14.2.4"
   },
   "dependencies": {
     "ftgu-browser-throttled-show": "^1.0.1"

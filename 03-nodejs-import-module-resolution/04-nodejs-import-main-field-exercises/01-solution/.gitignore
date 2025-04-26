@@ -1,2 +1,4 @@
 !node_modules
-node_modules/.modules.yaml
+node_modules/*
+!node_modules/hello
+!node_modules/world

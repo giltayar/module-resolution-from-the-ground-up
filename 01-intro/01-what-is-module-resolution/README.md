@@ -44,7 +44,7 @@ those are _module specifiers_.
 
 Those imports need to find the module "pointed to" by `./show.js` and `p-throttle`.
 
-In the case of `./show.js`, it is the file `{projectRot}/show.js`.
+In the case of `./show.js`, it is the file `{projectRoot}/show.js`.
 
 And in the case of `p-throttle`, it's `node_modules/p-throttle/index.js`.
 

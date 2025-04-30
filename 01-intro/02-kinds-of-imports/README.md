@@ -27,11 +27,11 @@ it was only broadly implemented in the 2020-s.
 ## Importing CommonJS
 
 ```js
-// cjs/index.js
+// commonjs/index.js
 const {show} = require('./show')
 ...
 
-// cjs/show.js
+// commonjs/show.js
 module.exports.show = function show(message) {
   console.log(message)
 }

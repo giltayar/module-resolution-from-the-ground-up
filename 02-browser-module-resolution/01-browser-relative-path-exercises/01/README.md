@@ -12,7 +12,19 @@ There are two errors in the source code (JavaScript and HTML). Fix them to make 
 
 1. Want to be sure it works? Run `pnpm test` to verify that the solution works.
 
-Hints:
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Hints
 
 - Open devtools and check the console errors
 

@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": "01-intro/01-what-is-module-resolution",
+      "name": "01/01-what-is-module-resolution"
+    },
+    {
+      "path": "01-intro/02-kinds-of-imports",
+      "name": "01/02-kinds-of-imports"
+    },
+    {
+      "path": "01-intro/03-module-resolution-runtime-tools",
+      "name": "01/02-module-resolution-runtime-tools"
+    },
+    {
+      "path": "02-browser-module-resolution/01-browser-relative-path",
+      "name": "02/01-browser-relative-path"
+    },
+    {
+      "path": "02-browser-module-resolution/01-browser-relative-path-exercises/01",
+      "name": "02/01-browser-relative-path/x/01"
+    },
+    {
+      "path": ".",
+      "name": "*everything*"
+    }
+  ],
+  "settings": {}
+}

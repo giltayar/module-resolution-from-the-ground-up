@@ -80,7 +80,7 @@ But we can give browsers a hint using **import maps**.
 ```jsx
 <script type="importmap">{
 	"imports": {
-		"p-throttle": "https://esm.sh/p-throttle@@7.0.0"
+		"p-throttle": "https://esm.sh/p-throttle"
 	}
 }</script>
 ```

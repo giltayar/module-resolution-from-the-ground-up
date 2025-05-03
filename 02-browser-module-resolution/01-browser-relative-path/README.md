@@ -62,17 +62,5 @@ absolutizing it with the current module URL - in our case `http://localhost:3000
 
 In our case, this results in `http://localhost:3000/show-utils/show.js`.
 
-You can calculate it using the following Node.js code:
-
-```js
-const relativePath = './show-utils/show.js'
-const absoluteUrl = 'http://localhost:3000/index.js'
-
-// our example
-new URL(relativePath, absoluteUrl).href
-
-//=> http://localhost:3000/show-utils/show.js
-```
-
 Absolutization works just like when you determine the final URL of an `<img src>` - you take the URL of the page
 and absolutize it with the relative path in `src`.

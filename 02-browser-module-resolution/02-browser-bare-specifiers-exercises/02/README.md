@@ -15,7 +15,7 @@ The `index.html` is missing the source map mappings to make it work and show "he
    - Note that this time, you'll need _two_ imports in the map, because the first package also uses another package,
      `p-throttle`. Which is also in `node_modules`.
 
-1. Want to be sure it works? Run `pnpm test` to verify that the solution works.
+1. Want to be sure it works? Run `pnpm test:x` to verify that the solution works.
 
 Hints:
 

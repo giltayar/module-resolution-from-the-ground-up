@@ -10,7 +10,7 @@ The `index.html` is missing the source map mappings to make it work and show "he
 
 1. Add the missing mapping to the import map so that the web page shows "hello, world" three times and stops.
 
-1. Want to be sure it works? Run `pnpm test` to verify that the solution works.
+1. Want to be sure it works? Run `pnpm test:x` to verify that the solution works.
 
 Hints:
 

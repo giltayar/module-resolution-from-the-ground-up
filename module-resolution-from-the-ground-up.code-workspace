@@ -18,7 +18,15 @@
     },
     {
       "path": "02-browser-module-resolution/01-browser-relative-path-exercises/01",
-      "name": "02/01-browser-relative-path/x/01"
+      "name": "02/01-browser-relative-path/x"
+    },
+    {
+      "path": "02-browser-module-resolution/02-browser-bare-specifiers",
+      "name": "02/02-browser-bare-specifiers"
+    },
+    {
+      "path": "02-browser-module-resolution/02-browser-bare-specifiers-exercises/01",
+      "name": "02/02-browser-bare-specifiers/x"
     },
     {
       "path": ".",

@@ -64,3 +64,9 @@ In our case, this results in `http://localhost:3000/show-utils/show.js`.
 
 Absolutization works just like when you determine the final URL of an `<img src>` - you take the URL of the page
 and absolutize it with the relative path in `src`.
+
+An important result this module resolution algorithm is
+that the file extension is _mandatory_. The browser doesn't try
+and _guess_ the file extension of the JS file, just like it doesn't
+try and guess it in a `<script src>` or an `<img src>`.
+If we remove the extension, we'll just get a `404`.

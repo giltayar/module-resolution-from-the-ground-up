@@ -6,6 +6,6 @@
     "strict": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    //"rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true
   }
 }

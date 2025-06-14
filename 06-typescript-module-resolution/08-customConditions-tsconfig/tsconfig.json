@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
+    "module": "NodeNext",
     "strict": true,
     "customConditions": ["crazy"]
   }
